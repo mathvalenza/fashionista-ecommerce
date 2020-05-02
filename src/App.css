@@ -5,7 +5,7 @@
 
 @media screen and (min-width: 728px) {
   .container {
-    background-color: red;
+    background-color: blue;
     width: 860px;
   }
 }
@@ -24,9 +24,49 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 0 16px;
 }
 
 .header__logo {
+
+}
+
+.products {
+  margin-top: 55px;
+  padding: 16px 0;
+}
+
+.products__title {
+  color: #a7a7a7;
+  font-weight: normal;
+}
+
+/* TODO: aplicar layout de grid aqui */
+.cards .container { 
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid orangered;
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+}
+
+.card__image {
+  width: 100%
+}
+
+.card__image img {
+  width: 100%
+}
+
+.card__name {
+
+}
+
+.card__price {
 
 }
