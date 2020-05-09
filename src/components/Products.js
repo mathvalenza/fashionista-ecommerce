@@ -4,20 +4,17 @@ import Card from './Card';
 
 export default function Products() {
   return (
-    <div className="products">
-      <div className="container">
+    <div className="container">
+      <div className="products">
         <h3 className="products__title">22 itens</h3>
-      </div>
-        <section className="cards">
-          <div className="container">
+          <section className="cards">
             <Card />
             <Card />
             <Card />
             <Card />
             <Card />
-          </div>
-        </section>
-      
+          </section>
+        </div>
     </div>
   )
 };
