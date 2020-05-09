@@ -1,13 +1,13 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 
-import { Home, Product } from './pages';
+import { Products } from './pages';
 
 export default function Routes() {
   return (
     <BrowserRouter>
-      <Route path="/" exact component={Home} />
-      <Route path="/product/:id" component={Product} />
+      <Redirect from="/" to="/products" />
+      <Route path="/products" component={Products} />
     </BrowserRouter>
   );
 };
