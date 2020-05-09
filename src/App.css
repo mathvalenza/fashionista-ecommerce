@@ -3,10 +3,10 @@
   width: 100%;
 }
 
-@media screen and (min-width: 728px) {
+@media screen and (min-width: 992px) {
   .container {
     background-color: blue;
-    width: 860px;
+    width: 992px;
   }
 }
 
@@ -40,19 +40,30 @@
   font-weight: normal;
 }
 
-/* TODO: aplicar layout de grid aqui */
 .cards .container { 
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto;
+  column-gap: 4px;
+  row-gap: 4px;
+}
+
+@media screen and (min-width: 768px) {
+  .cards .container {
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cards .container {
+    grid-template-columns: 50% 50%;
+  }
 }
 
 .card {
   background-color: white;
-  border: 1px solid orangered;
   display: flex;
   flex-direction: column;
-  width: 23%;
 }
 
 .card__image {
