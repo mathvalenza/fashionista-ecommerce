@@ -9,9 +9,9 @@ export default function Card() {
           alt="Foto do produto"
         />
       </div>
-      <div className="card__name">
+      <h3 className="card__name">
         Vestido transpasse bow 
-      </div>
+      </h3>
       <div className="card__price">
         R$ 199,90
       </div>

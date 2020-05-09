@@ -1,5 +1,6 @@
 body {
   background-color: #f9f9f9;
+  font-family: Noto Sans SC,sans-serif;
 }
 
 .container {
@@ -41,7 +42,7 @@ body {
 
 .products__title {
   color: #a7a7a7;
-  font-weight: normal;
+  font-size: 16px;
 }
 
 .container .cards { 
@@ -49,7 +50,7 @@ body {
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: auto;
   column-gap: 4px;
-  row-gap: 4px;
+  row-gap: 8px;
 }
 
 @media screen and (min-width: 768px) {
@@ -70,6 +71,11 @@ body {
   flex-direction: column;
 }
 
+.card:hover {
+  cursor: pointer;
+  border: 1px solid black;
+}
+
 .card__image {
   width: 100%
 }
@@ -79,9 +85,15 @@ body {
 }
 
 .card__name {
-
+  color: #212529;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 8px 0 4px 0;
 }
 
 .card__price {
-
+  font-size: 14px;
+  text-align: center;
 }
