@@ -5,6 +5,7 @@ body {
 
 .app {
   margin-top: 69px;
+  height: 100vh;
 }
 
 .container {
@@ -96,4 +97,32 @@ body {
 .card__price {
   font-size: 14px;
   text-align: center;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+}
+
+.product figure {
+  width: 100%;
+  margin: 0;
+}
+
+.product img {
+  width: 100%;
+}
+
+@media screen and (min-width: 420px) {
+  .product {
+    flex-direction: row;
+  }
+
+  .product figure {
+    width: 50%;
+  }
+}
+
+.product__detail {
+  padding: 16px;
 }
