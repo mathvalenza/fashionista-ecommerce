@@ -23,6 +23,7 @@ export default function Product(props) {
             <button className="product__size-option">M</button>
             <button className="product__size-option">G</button>
           </div>
+          <button className="product__button">Adicionar à sacola</button>
         </div>
       </section>
     </div>

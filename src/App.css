@@ -153,6 +153,7 @@ body {
 
 .product__size-options {
   margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .product__size-option {
@@ -172,4 +173,29 @@ body {
 .product__size-option:hover {
   cursor: pointer;
   box-shadow: 3px 3px 3px -4px rgba(0,0,0,0.3);
+}
+
+.product__button {
+  background-color: #212529;
+  border: none;
+  padding: 8px;
+  color: white;
+  width: inherit;
+  border-radius: 8px;
+  box-shadow: 3px 3px 12px -4px rgba(0,0,0,0.3);
+  font-size: 16px;
+  position: sticky;
+  bottom: 16px;
+  width: 100%;
+}
+
+@media screen and (min-width: 420px) {
+  .product__button {
+    position: static;
+  }
+}
+
+.product__button:hover {
+  background-color: #212529d2;
+  cursor: pointer;
 }
