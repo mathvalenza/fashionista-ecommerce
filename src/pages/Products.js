@@ -1,11 +1,8 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 
 import Card from '../components/Card';
 
-export default function Home() {
-  const history = useHistory();
-
+export default function Home({ history }) {
   function handleClick(productId) {
     history.push(`/product/${productId}`, { productId });
   }

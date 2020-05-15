@@ -37,8 +37,8 @@ body {
   padding: 0 16px;
 }
 
-.header__logo {
-
+.header__logo:hover {
+  cursor: pointer;
 }
 
 .header__right {
@@ -96,11 +96,11 @@ body {
 }
 
 .card__image {
-  width: 100%
+  width: 100%;
 }
 
 .card__image img {
-  width: 100%
+  width: 100%;
 }
 
 .card__name {

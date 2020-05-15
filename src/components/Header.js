@@ -2,12 +2,16 @@ import React from 'react';
 
 import logo from '../assets/logo.png';
 
-export default function Header() {
+export default function Header({ history }) {
+  function handleClickLogo(productId) {
+    history.push('/products');
+  }
+
   return (
     <header className="header">
       <div className="container">
         <div className="header__logo">
-          <img src={logo}  alt="Logo Fashioninsta"/>
+          <img src={logo} onClick={handleClickLogo} alt="Logo Fashioninsta"/>
         </div>
         <div className="header__right">
           <div className="header__icon">
