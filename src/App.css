@@ -41,6 +41,23 @@ body {
 
 }
 
+.header__right {
+  display: flex;
+}
+
+.header__icon {
+  font-size: 18px;
+}
+
+.header__icon:not(:last-child) {
+  margin-right: 12px;
+}
+
+.header__icon:hover {
+  cursor: pointer;
+  color: #212529d2;
+}
+
 .products {
   padding: 16px 0;
 }
