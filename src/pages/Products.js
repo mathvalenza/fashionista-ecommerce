@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
+import { getProducts } from '../services';
 
 import Card from '../components/Card';
 
 export default function Home({ history }) {
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadProducts() {
+      const products = await getProducts();
+      setProducts(products);
+
+      console.log('products: ', products);
+    }
+
+    loadProducts().then(() => setIsLoading(false));
+  }, [])
+
+
   function handleClick(productId) {
     history.push(`/products/${productId}`, { productId });
   }
@@ -12,11 +29,10 @@ export default function Home({ history }) {
       <div className="products">
         <h3 className="products__title">22 itens</h3>
         <section className="cards">
-          <Card id="1" onClick={handleClick}/>
-          <Card id="2" onClick={handleClick} />
-          <Card id="3" onClick={handleClick} />
-          <Card id="4" onClick={handleClick} />
-          <Card id="5" onClick={handleClick} />
+          { isLoading
+            ? <h1>Carregando...</h1>
+            : products && products.map((product, index) => <Card key={index} {...product} onClick={handleClick}/>)
+          }
         </section>
       </div>
     </div>
