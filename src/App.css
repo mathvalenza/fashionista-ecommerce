@@ -4,8 +4,8 @@ body {
 }
 
 .app {
-  margin-top: 69px;
   height: 100vh;
+  margin-top: 69px;
 }
 
 .container {
@@ -54,8 +54,8 @@ body {
 }
 
 .header__icon:hover {
-  cursor: pointer;
   color: #212529d2;
+  cursor: pointer;
 }
 
 .products {
@@ -72,10 +72,10 @@ body {
 }
 
 .container .cards { 
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr;
   column-gap: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
   row-gap: 8px;
 }
 
@@ -91,8 +91,8 @@ body {
 }
 
 .card:hover {
-  cursor: pointer;
   box-shadow: 3px 3px 12px -4px rgba(0,0,0,0.3);
+  cursor: pointer;
 }
 
 .card__image {
@@ -105,11 +105,11 @@ body {
 
 .card__name {
   color: #212529;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 8px 0 4px 0;
   text-align: center;
   text-transform: uppercase;
-  font-weight: bold;
-  font-size: 14px;
-  margin: 8px 0 4px 0;
 }
 
 .card__price {
@@ -123,8 +123,8 @@ body {
 }
 
 .product figure {
-  width: 100%;
   margin: 0;
+  width: 100%;
 }
 
 .product img {
@@ -148,9 +148,9 @@ body {
 .product__name {
   font-size: 22px;
   font-weight: bold;
-  text-transform: uppercase;
   letter-spacing: -.05rem;
   margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .product__price {
@@ -170,8 +170,8 @@ body {
 }
 
 .product__size-options {
-  margin-top: 8px;
   margin-bottom: 8px;
+  margin-top: 8px;
 }
 
 .product__size-option {
@@ -180,31 +180,31 @@ body {
 
 .product__size-option {
   background-color: white;
-  border: 1px solid #dfdfdf;
   border-radius: 5px;
+  border: 1px solid #dfdfdf;
+  font-size: 16px;
+  font-weight: bold;
   padding: 8px;
   width: 32px;
-  font-weight: bold;
-  font-size: 16px;
 }
 
 .product__size-option:hover {
-  cursor: pointer;
   box-shadow: 3px 3px 3px -4px rgba(0,0,0,0.3);
+  cursor: pointer;
 }
 
 .product__button {
   background-color: #212529;
-  border: none;
-  padding: 8px;
-  color: white;
-  width: inherit;
   border-radius: 8px;
-  box-shadow: 3px 3px 12px -4px rgba(0,0,0,0.3);
-  font-size: 16px;
-  position: sticky;
+  border: none;
   bottom: 16px;
+  box-shadow: 3px 3px 12px -4px rgba(0,0,0,0.3);
+  color: white;
+  font-size: 16px;
+  padding: 8px;
+  position: sticky;
   width: 100%;
+  width: inherit;
 }
 
 @media screen and (min-width: 420px) {
