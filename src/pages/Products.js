@@ -4,7 +4,7 @@ import Card from '../components/Card';
 
 export default function Home({ history }) {
   function handleClick(productId) {
-    history.push(`/product/${productId}`, { productId });
+    history.push(`/products/${productId}`, { productId });
   }
 
   return (
