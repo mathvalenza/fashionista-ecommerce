@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { getProducts } from '../services';
 
-import Card from '../components/Card';
+import ProductCard from '../components/ProductCard';
 
 export default function Home({ history }) {
   const [products, setProducts] = useState([]);
@@ -28,10 +28,10 @@ export default function Home({ history }) {
     <div className="container">
       <div className="products">
         <h3 className="products__title">22 itens</h3>
-        <section className="cards">
+        <section className="products__cards">
           { isLoading
             ? <h1>Carregando...</h1>
-            : products && products.map((product, index) => <Card key={index} {...product} onClick={handleClick}/>)
+            : products && products.map((product, index) => <ProductCard key={index} {...product} onClick={handleClick}/>)
           }
         </section>
       </div>
