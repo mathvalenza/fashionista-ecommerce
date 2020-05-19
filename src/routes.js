@@ -8,7 +8,7 @@ export default function Routes() {
       <>
         <Redirect from="/" to="/products" />
         <Route path="/products" exact component={Products} />
-        <Route path={`/products/:productId`} component={Product} />
+        <Route path={`/product/:name`} component={Product} />
       </>
   );
 };

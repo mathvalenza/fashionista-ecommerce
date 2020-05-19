@@ -20,8 +20,8 @@ export default function Home({ history }) {
   }, [])
 
 
-  function handleClick(productId) {
-    history.push(`/products/${productId}`, { productId });
+  function handleClick(name) {
+    history.push(`/product/${name}`, { name });
   }
 
   return (

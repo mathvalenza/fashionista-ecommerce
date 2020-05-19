@@ -1,6 +1,10 @@
 import React from 'react';
 
+import { useParams } from 'react-router-dom';
+
 export default function Product(props) {
+  const { name } = useParams();
+
   return (
     <div className="container">
       <section className="product">
@@ -9,7 +13,7 @@ export default function Product(props) {
         </figure>
         <div className="product__detail">
           <div className="product__name">
-            Vestido TRANSPASSE BOW
+            { name }
           </div>
           <div className="product__price">
             <span className="product__price--black">R$ 199,90</span>
