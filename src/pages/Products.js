@@ -13,8 +13,6 @@ const Home = ({ history, stateProducts, dispatch }) => {
     async function loadProducts() {
       const products = await getProducts();
       setProducts(products);
-
-      console.log('products: ', products);
     }
 
     loadProducts().then(() => setIsLoading(false));
