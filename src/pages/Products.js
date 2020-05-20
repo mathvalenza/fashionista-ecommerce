@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 
 import { getProducts } from '../services';
 
 import ProductCard from '../components/ProductCard';
 
-export default function Home({ history }) {
+const Home = ({ history, stateProducts, dispatch }) => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -17,8 +18,7 @@ export default function Home({ history }) {
     }
 
     loadProducts().then(() => setIsLoading(false));
-  }, [])
-
+  }, [products]);
 
   function handleClick(name) {
     history.push(`/product/${name}`, { name });
@@ -27,14 +27,22 @@ export default function Home({ history }) {
   return (
     <div className="container">
       <div className="products">
-        <h3 className="products__title">22 itens</h3>
+        <h3 className="products__title">22 itens {stateProducts[0].name}</h3>
         <section className="products__cards">
-          { isLoading
-            ? <h1>Carregando...</h1>
-            : products && products.map((product, index) => <ProductCard key={index} {...product} onClick={handleClick}/>)
-          }
+          {isLoading ? (
+            <h1>Carregando...</h1>
+          ) : (
+            products &&
+            products.map((product, index) => (
+              <ProductCard key={index} {...product} onClick={handleClick} />
+            ))
+          )}
         </section>
       </div>
     </div>
-  )
+  );
 };
+
+export default connect((state) => ({ stateProducts: state.home.products }))(
+  Home
+);
