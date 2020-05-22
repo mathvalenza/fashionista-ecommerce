@@ -4,8 +4,8 @@ body {
 }
 
 .app {
-  height: 100vh;
-  margin-top: 69px;
+  margin-top: 55px;
+  padding-top: 8px;
 }
 
 .container {
@@ -97,7 +97,6 @@ body {
 
 .product-image {
   height: 100%;
-  width: 100%;
 }
 
 .product-image img {
@@ -133,7 +132,7 @@ body {
 .product {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
 }
 
 @media screen and (min-width: 420px) {
