@@ -7,6 +7,7 @@ import { ProductCard, Drawer } from '../components';
 export default function Products({ history, stateProducts, dispatch }) {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [showDrawer, setShowDrawer] = useState(false);
 
   useEffect(() => {
     async function loadProducts() {
@@ -26,6 +27,9 @@ export default function Products({ history, stateProducts, dispatch }) {
       <div className="products">
         <h3 className="products__title">
           {products ? products.length : 0} itens
+          <button onClick={() => setShowDrawer(!showDrawer)}>
+            Toggle drawer
+          </button>
         </h3>
         <section className="products__cards">
           {isLoading ? (
@@ -38,7 +42,7 @@ export default function Products({ history, stateProducts, dispatch }) {
           )}
         </section>
       </div>
-      <Drawer />
+      {showDrawer && <Drawer close={() => setShowDrawer(false)} />}
     </div>
   );
 }

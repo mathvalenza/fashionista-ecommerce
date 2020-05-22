@@ -223,8 +223,25 @@ body {
 
 .drawer {
   background-color: blue;
-  width: 33vw;
-  position: absolute;
-  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  height: calc(100vh - 55px);
   right: 0;
+  z-index: 9;
+  top: 0;
+  margin-top: 55px;
+  border-bottom: 5px solid yellow;
+  /* TODO: ver forma de deixar o margin-top dinâmico de acordo com a altura do header */
+}
+
+@media screen and (min-width: 420px) {
+  .drawer {
+    width: 33vw;
+  }
+}
+
+.drawer__title {
+}
+
+.drawer__content {
 }
