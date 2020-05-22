@@ -220,3 +220,11 @@ body {
   background-color: #212529d2;
   cursor: pointer;
 }
+
+.drawer {
+  background-color: blue;
+  width: 33vw;
+  position: absolute;
+  height: 100vh;
+  right: 0;
+}

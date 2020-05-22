@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useParams } from 'react-router-dom';
 
-import ProductImage from '../components/ProductImage.js';
+import { ProductImage } from '../components';
 
 export default function Product(props) {
   const { name } = useParams();

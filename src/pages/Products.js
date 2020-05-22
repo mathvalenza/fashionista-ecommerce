@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import { getProducts } from '../services';
+import { getProducts } from '../services/api';
 
-import ProductCard from '../components/ProductCard';
+import { ProductCard, Drawer } from '../components';
 
-const Home = ({ history, stateProducts, dispatch }) => {
+export default function Products({ history, stateProducts, dispatch }) {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -38,8 +38,7 @@ const Home = ({ history, stateProducts, dispatch }) => {
           )}
         </section>
       </div>
+      <Drawer />
     </div>
   );
-};
-
-export default Home;
+}
