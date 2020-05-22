@@ -42,7 +42,7 @@ export default function Products({ history, stateProducts, dispatch }) {
           )}
         </section>
       </div>
-      {showDrawer && <Drawer close={() => setShowDrawer(false)} />}
+      {<Drawer active={showDrawer} close={() => setShowDrawer(false)} />}
     </div>
   );
 }
