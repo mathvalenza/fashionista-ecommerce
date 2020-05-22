@@ -2,19 +2,20 @@ import React from 'react';
 
 import { useParams } from 'react-router-dom';
 
+import ProductImage from '../components/ProductImage.js';
+
 export default function Product(props) {
   const { name } = useParams();
 
   return (
     <div className="container">
       <section className="product">
-        <figure>
-          <img src="https://d3l7rqep7l31az.cloudfront.net/images/products/20002605_615_catalog_1.jpg?1460136912" alt=""/>
-        </figure>
+        <ProductImage
+          name={name}
+          image="https://d3l7rqep7l31az.cloudfront.net/images/products/20002605_615_catalog_1.jpg?1460136912"
+        />
         <div className="product__detail">
-          <div className="product__name">
-            { name }
-          </div>
+          <div className="product__name">{name}</div>
           <div className="product__price">
             <span className="product__price--black">R$ 199,90</span>
             <span>em até 3x R$ 66,63</span>
@@ -31,5 +32,5 @@ export default function Product(props) {
         </div>
       </section>
     </div>
-  )
-};
+  );
+}

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ProductImage from './ProductImage';
+
 export default function ProductCard({ onClick, name, image, actual_price }) {
   function handeClick() {
     onClick(name);
@@ -7,18 +9,9 @@ export default function ProductCard({ onClick, name, image, actual_price }) {
 
   return (
     <section onClick={handeClick} className="product-card">
-      <div className="product-card__image">
-        <img
-          src={image}
-          alt={name}
-        />
-      </div>
-      <h3 className="product-card__name">
-        { name }
-      </h3>
-      <div className="product-card__price">
-        { actual_price }
-      </div>
+      <ProductImage name={name} image={image} />
+      <h3 className="product-card__name">{name}</h3>
+      <div className="product-card__price">{actual_price}</div>
     </section>
-  )
+  );
 }

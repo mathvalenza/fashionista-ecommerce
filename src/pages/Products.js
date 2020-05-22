@@ -15,7 +15,7 @@ const Home = ({ history, stateProducts, dispatch }) => {
     }
 
     loadProducts().then(() => setIsLoading(false));
-  }, [products]);
+  }, []);
 
   function handleClick(name) {
     history.push(`/product/${name}`, { name });
