@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
 
 import { getProducts } from '../services';
 
@@ -25,7 +24,9 @@ const Home = ({ history, stateProducts, dispatch }) => {
   return (
     <div className="container">
       <div className="products">
-        <h3 className="products__title">22 itens {stateProducts[0].name}</h3>
+        <h3 className="products__title">
+          {products ? products.length : 0} itens
+        </h3>
         <section className="products__cards">
           {isLoading ? (
             <h1>Carregando...</h1>
@@ -41,6 +42,4 @@ const Home = ({ history, stateProducts, dispatch }) => {
   );
 };
 
-export default connect((state) => ({ stateProducts: state.home.products }))(
-  Home
-);
+export default Home;
