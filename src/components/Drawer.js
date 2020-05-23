@@ -5,7 +5,11 @@ export default function Drawer({ active, close }) {
 
   return (
     <div className={classes}>
-      DRAWER <span onClick={close}>(voltar)</span>
+      <div className="drawer__title">
+        <i className="fa fa-arrow-left" onClick={close}></i>
+      </div>
+      <div className="drawer__content">CONTENT</div>
+      <div className="drawer__footer">FOOTER</div>
     </div>
   );
 }

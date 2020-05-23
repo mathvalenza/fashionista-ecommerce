@@ -231,6 +231,8 @@ body {
   transition: width 1s;
   width: 0;
   z-index: 9;
+  display: flex;
+  flex-direction: column;
   /* TODO: ver forma de deixar o margin-top dinâmico de acordo com a altura do header */
 }
 
@@ -245,7 +247,19 @@ body {
 }
 
 .drawer__title {
+  font-size: 20px;
+  padding: 16px;
+}
+
+.drawer__title:hover {
+  cursor: pointer;
 }
 
 .drawer__content {
+  flex: 1 1 auto;
+  /* background: green; */
+}
+
+.drawer__footer {
+  height: 55px;
 }
