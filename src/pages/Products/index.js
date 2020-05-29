@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { getProducts } from '../services/api';
+import { setProducts } from './actions';
 
-import { ProductCard, Drawer } from '../components';
+import { getProducts } from '../../services/api';
 
-export default function Products({ history, stateProducts, dispatch }) {
-  const [products, setProducts] = useState([]);
+import { ProductCard, Drawer } from '../../components';
+
+export default function Products({ history, stateProducts }) {
+  const store = useSelector((state) => state);
+  const products = store.products;
+  const dispatch = useDispatch();
+  console.log('store: ', store);
   const [isLoading, setIsLoading] = useState(true);
   const [showDrawer, setShowDrawer] = useState(false);
 
   useEffect(() => {
-    async function loadProducts() {
-      const products = await getProducts();
-      setProducts(products);
-    }
-
-    loadProducts().then(() => setIsLoading(false));
+    getProducts().then((products) => {
+      // dispatch(setProducts(products));
+      setIsLoading(false);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function handleClick(name) {
