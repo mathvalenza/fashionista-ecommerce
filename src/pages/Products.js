@@ -1,19 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { setProducts } from '../store/actions/products';
+import { toggleShowCart } from '../store/actions/cart';
 
 import { ProductCard, Drawer } from '../components';
 
 export default function Products({ history, stateProducts }) {
   const { productsList, isLoading } = useSelector((state) => state.products);
+  const { showCart } = useSelector((state) => state.cart);
+
   const dispatch = useDispatch();
-  const [showDrawer, setShowDrawer] = useState(false);
 
   useEffect(() => {
     dispatch(setProducts());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
   function handleClick(name) {
     history.push(`/product/${name}`, { name });
@@ -27,7 +28,7 @@ export default function Products({ history, stateProducts }) {
         ) : (
           <React.Fragment>
             <h3 className="products__title">{productsList.length} itens</h3>
-            <button onClick={() => setShowDrawer(!showDrawer)}>
+            <button onClick={() => dispatch(toggleShowCart())}>
               Toggle drawer
             </button>
             <section className="products__cards">
@@ -39,7 +40,7 @@ export default function Products({ history, stateProducts }) {
           </React.Fragment>
         )}
       </div>
-      {<Drawer active={showDrawer} close={() => setShowDrawer(false)} />}
+      {<Drawer active={showCart} close={() => dispatch(toggleShowCart())} />}
     </div>
   );
 }
