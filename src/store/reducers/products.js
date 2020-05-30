@@ -2,7 +2,7 @@ import { SET_IS_LOADING, SET_PRODUCTS } from '../types';
 
 const INITIAL_STATE = {
   isLoading: false,
-  products: []
+  productsList: []
 };
 
 export default function productsReducer(state = INITIAL_STATE, action) {
@@ -16,7 +16,7 @@ export default function productsReducer(state = INITIAL_STATE, action) {
     case SET_PRODUCTS:
       return {
         ...state,
-        products: action.payload
+        productsList: action.payload
       };
     default:
       return state;

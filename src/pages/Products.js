@@ -6,7 +6,7 @@ import { setProducts } from '../store/actions/products';
 import { ProductCard, Drawer } from '../components';
 
 export default function Products({ history, stateProducts }) {
-  const { products, isLoading } = useSelector((state) => state.products);
+  const { productsList, isLoading } = useSelector((state) => state.products);
   const dispatch = useDispatch();
   const [showDrawer, setShowDrawer] = useState(false);
 
@@ -22,22 +22,22 @@ export default function Products({ history, stateProducts }) {
   return (
     <div className="container">
       <div className="products">
-        <h3 className="products__title">
-          {products ? products.length : 0} itens
-          <button onClick={() => setShowDrawer(!showDrawer)}>
-            Toggle drawer
-          </button>
-        </h3>
-        <section className="products__cards">
-          {isLoading ? (
-            <h1>Carregando...</h1>
-          ) : (
-            products &&
-            products.map((product, index) => (
-              <ProductCard key={index} {...product} onClick={handleClick} />
-            ))
-          )}
-        </section>
+        {isLoading ? (
+          <h1>Carregando...</h1>
+        ) : (
+          <React.Fragment>
+            <h3 className="products__title">{productsList.length} itens</h3>
+            <button onClick={() => setShowDrawer(!showDrawer)}>
+              Toggle drawer
+            </button>
+            <section className="products__cards">
+              {productsList &&
+                productsList.map((product, index) => (
+                  <ProductCard key={index} {...product} onClick={handleClick} />
+                ))}
+            </section>
+          </React.Fragment>
+        )}
       </div>
       {<Drawer active={showDrawer} close={() => setShowDrawer(false)} />}
     </div>
