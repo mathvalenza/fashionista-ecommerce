@@ -1,25 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { setProducts } from './actions';
+import { setProducts } from '../store/actions/products';
 
-import { getProducts } from '../../services/api';
-
-import { ProductCard, Drawer } from '../../components';
+import { ProductCard, Drawer } from '../components';
 
 export default function Products({ history, stateProducts }) {
-  const store = useSelector((state) => state);
-  const products = store.products;
+  const { products, isLoading } = useSelector((state) => state.products);
   const dispatch = useDispatch();
-  console.log('store: ', store);
-  const [isLoading, setIsLoading] = useState(true);
   const [showDrawer, setShowDrawer] = useState(false);
 
   useEffect(() => {
-    getProducts().then((products) => {
-      // dispatch(setProducts(products));
-      setIsLoading(false);
-    });
+    dispatch(setProducts());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

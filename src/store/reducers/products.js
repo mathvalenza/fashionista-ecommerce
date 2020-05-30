@@ -1,17 +1,16 @@
-import { GET_TODOS, SET_PRODUCTS } from './types';
+import { SET_IS_LOADING, SET_PRODUCTS } from '../types';
 
 const INITIAL_STATE = {
-  todo: 'OK',
-  todos: [],
+  isLoading: false,
   products: []
 };
 
 export default function productsReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case GET_TODOS:
+    case SET_IS_LOADING:
       return {
         ...state,
-        todos: ['todo 1', 'todo 2']
+        isLoading: action.payload
       };
 
     case SET_PRODUCTS:
