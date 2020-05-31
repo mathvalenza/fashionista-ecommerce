@@ -13,9 +13,11 @@ export default function Search() {
 
   return (
     <Drawer
-      title="Search"
+      title="Buscar produtos"
       active={showSearch}
       close={() => dispatch(toggleShowSearch())}
-    />
+    >
+      <div>SEARCH</div>
+    </Drawer>
   );
 }

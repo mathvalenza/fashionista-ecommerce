@@ -1,0 +1,35 @@
+.cart {
+  display: flex;
+  flex: 1;
+  padding: 16px 32px;
+}
+
+.cart--empty {
+  align-items: center;
+  background-color: #eee;
+  display: flex;
+  flex: 1;
+}
+
+.cart--empty p {
+  color: #777;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.cart__content {
+  align-items: center;
+  background-color: #efefef;
+  color: #777;
+  display: flex;
+  flex: 1;
+  font-size: 18px;
+  padding: 16px 32px;
+}
+
+.cart__footer {
+  background-color: #212529;
+  color: white;
+  font-weight: bold;
+  padding: 16px 32px;
+}
