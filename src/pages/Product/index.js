@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import './style.css';
 
-import { ProductImage } from '../../components';
+import { ImagePlaceholder } from 'components';
 
 export default function Product(props) {
   const { name } = useParams();
@@ -11,7 +11,7 @@ export default function Product(props) {
   return (
     <div className="container">
       <section className="product">
-        <ProductImage
+        <ImagePlaceholder
           name={name}
           image="https://d3l7rqep7l31az.cloudfront.net/images/products/20002605_615_catalog_1.jpg?1460136912"
         />

@@ -2,16 +2,16 @@ import React from 'react';
 
 import './style.css';
 
-import ProductImage from '../ProductImage';
+import { ImagePlaceholder } from 'components';
 
 export default function ProductCard({ onClick, name, image, actual_price }) {
-  function handeClick() {
+  const handeClick = () => {
     onClick(name);
-  }
+  };
 
   return (
-    <section onClick={handeClick} className="product-card">
-      <ProductImage name={name} image={image} />
+    <section onClick={() => handeClick()} className="product-card">
+      <ImagePlaceholder name={name} image={image} />
       <h3 className="product-card__name">{name}</h3>
       <div className="product-card__price">{actual_price}</div>
     </section>

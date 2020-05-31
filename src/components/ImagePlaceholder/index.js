@@ -2,7 +2,7 @@ import React from 'react';
 
 import './style.css';
 
-export default function ProductImage({ image, name }) {
+export default function ImagePlaceholder({ image, name }) {
   return (
     <div className="product-image">
       {image ? (

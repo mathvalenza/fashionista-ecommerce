@@ -1,6 +1,5 @@
 import Drawer from './Drawer';
 import Header from './Header';
-import ProductCard from './ProductCard';
-import ProductImage from './ProductImage';
+import ImagePlaceholder from './ImagePlaceholder';
 
-export { Drawer, Header, ProductCard, ProductImage };
+export { Drawer, Header, ImagePlaceholder };

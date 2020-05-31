@@ -3,10 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import './style.css';
 
-import { setProducts } from '../../store/actions/products';
-import { toggleShowCart } from '../../store/actions/cart';
+import { setProducts } from 'store/actions/products';
+import { toggleShowCart } from 'store/actions/cart';
 
-import { ProductCard, Drawer } from '../../components';
+import { Drawer } from 'components';
+import Card from './Card';
 
 export default function Products({ history, stateProducts }) {
   const { productsList, isLoading } = useSelector((state) => state.products);
@@ -30,13 +31,10 @@ export default function Products({ history, stateProducts }) {
         ) : (
           <React.Fragment>
             <h3 className="products__title">{productsList.length} itens</h3>
-            <button onClick={() => dispatch(toggleShowCart())}>
-              Toggle drawer
-            </button>
             <section className="products__cards">
               {productsList &&
                 productsList.map((product, index) => (
-                  <ProductCard key={index} {...product} onClick={handleClick} />
+                  <Card key={index} {...product} onClick={handleClick} />
                 ))}
             </section>
           </React.Fragment>
