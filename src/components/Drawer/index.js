@@ -2,14 +2,12 @@ import React from 'react';
 
 import './style.css';
 
-export default function Drawer({ active, close }) {
-  const classes = `drawer ${active ? 'drawer--active' : 'drawer--hidden'}`;
-
+export default function Drawer({ active, close, title }) {
   return (
-    <div className={classes}>
+    <div className={`drawer ${active ? 'drawer--active' : 'drawer--hidden'}`}>
       <div className="drawer__title">
         <i className="fa fa-arrow-left" onClick={close}></i>
-        <span>Sua sacola</span>
+        <span>{title}</span>
       </div>
       <div className="drawer__content">
         <span>Sua sacola está vazia :(</span>

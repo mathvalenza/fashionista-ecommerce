@@ -3,7 +3,10 @@ import { BrowserRouter } from 'react-router-dom';
 
 import './App.css';
 
-import Header from './components/Header';
+import Header from './pages/components/Header';
+import Cart from './pages/components/Cart';
+import Search from './pages/components/Search';
+
 import Routes from './routes';
 
 export default function App() {
@@ -12,6 +15,8 @@ export default function App() {
       <Header />
       <div className="app">
         <Routes />
+        <Cart />
+        <Search />
       </div>
     </BrowserRouter>
   );

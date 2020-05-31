@@ -4,14 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import './style.css';
 
 import { setProducts } from 'store/actions/products';
-import { toggleShowCart } from 'store/actions/cart';
 
-import { Drawer } from 'components';
 import Card from './Card';
 
 export default function Products({ history, stateProducts }) {
   const { productsList, isLoading } = useSelector((state) => state.products);
-  const { showCart } = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
 
@@ -40,7 +37,6 @@ export default function Products({ history, stateProducts }) {
           </React.Fragment>
         )}
       </div>
-      {<Drawer active={showCart} close={() => dispatch(toggleShowCart())} />}
     </div>
   );
 }
