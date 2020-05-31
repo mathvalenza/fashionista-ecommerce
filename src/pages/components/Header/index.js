@@ -6,6 +6,7 @@ import './style.css';
 import logo from 'assets/logo.png';
 
 import { toggleShowCart } from 'store/actions/cart';
+import { toggleShowSearch } from 'store/actions/search';
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ export default function Header() {
         <div className="header__right">
           <div
             className="header__icon"
-            onClick={() => dispatch(toggleShowCart())}
+            onClick={() => dispatch(toggleShowSearch())}
           >
             <i className="fa fa-search"></i>
           </div>
