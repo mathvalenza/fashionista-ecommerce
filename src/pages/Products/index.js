@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { setProducts } from '../store/actions/products';
-import { toggleShowCart } from '../store/actions/cart';
+import './style.css';
 
-import { ProductCard, Drawer } from '../components';
+import { setProducts } from '../../store/actions/products';
+import { toggleShowCart } from '../../store/actions/cart';
+
+import { ProductCard, Drawer } from '../../components';
 
 export default function Products({ history, stateProducts }) {
   const { productsList, isLoading } = useSelector((state) => state.products);

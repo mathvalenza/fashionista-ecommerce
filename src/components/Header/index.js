@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import logo from '../assets/logo.png';
+import './style.css';
+
+import logo from '../../assets/logo.png';
 
 export default function Header() {
   return (
@@ -9,7 +11,7 @@ export default function Header() {
       <div className="container">
         <div className="header__logo">
           <Link to="/products">
-            <img src={logo} alt="Logo Fashioninsta"/>
+            <img src={logo} alt="Logo Fashioninsta" />
           </Link>
         </div>
         <div className="header__right">
@@ -22,5 +24,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-  )
-};
+  );
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 
-import ProductImage from './ProductImage';
+import './style.css';
+
+import ProductImage from '../ProductImage';
 
 export default function ProductCard({ onClick, name, image, actual_price }) {
   function handeClick() {

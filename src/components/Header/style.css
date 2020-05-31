@@ -1,0 +1,38 @@
+.header {
+  background-color: white;
+  box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  height: 55px;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header .container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.header__logo:hover {
+  cursor: pointer;
+}
+
+.header__right {
+  display: flex;
+}
+
+.header__icon {
+  font-size: 18px;
+}
+
+.header__icon:not(:last-child) {
+  margin-right: 12px;
+}
+
+.header__icon:hover {
+  color: #212529d2;
+  cursor: pointer;
+}

@@ -1,0 +1,19 @@
+.product-image {
+  height: 100%;
+}
+
+.product-image img {
+  width: 100%;
+}
+
+.product-image--not-found {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 16px;
+  background-color: #eee;
+  color: #777;
+  font-weight: bold;
+}

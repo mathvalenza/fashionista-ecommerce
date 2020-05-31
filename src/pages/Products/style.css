@@ -1,0 +1,26 @@
+.products {
+  padding: 16px 0;
+}
+
+.container .products {
+  padding: 0 16px;
+}
+
+.products__title {
+  color: #a7a7a7;
+  font-size: 16px;
+}
+
+.container .products__cards {
+  column-gap: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  row-gap: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .container .products__cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './style.css';
+
 export default function Drawer({ active, close }) {
   const classes = `drawer ${active ? 'drawer--active' : 'drawer--hidden'}`;
 
