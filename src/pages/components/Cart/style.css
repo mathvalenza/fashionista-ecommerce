@@ -22,6 +22,9 @@
   flex-direction: column;
   flex: 1;
   font-size: 18px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 80vh;
 }
 
 .cart__footer {
@@ -37,6 +40,7 @@
   flex-direction: column;
   flex-wrap: wrap-reverse;
   padding-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .chosed-product__row {

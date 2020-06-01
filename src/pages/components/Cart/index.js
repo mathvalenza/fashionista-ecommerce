@@ -15,7 +15,7 @@ export default function Cart() {
 
   return (
     <Drawer
-      title="Sua sacola"
+      title="Sua sacola (1)"
       active={showCart}
       close={() => dispatch(toggleShowCart())}
     >
