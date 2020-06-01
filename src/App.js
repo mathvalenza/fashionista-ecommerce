@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import './App.css';
 
@@ -10,13 +11,23 @@ import Search from './pages/components/Search';
 import Routes from './routes';
 
 export default function App() {
+  const { showCart } = useSelector((state) => state.cart);
+  const { showSearch } = useSelector((state) => state.search);
+  const isDrawerActive = showCart || showSearch;
+
   return (
     <BrowserRouter>
-      <Header />
       <div className="app">
-        <Routes />
-        <Cart />
-        <Search />
+        <Header />
+        <div
+          className={`app-content ${
+            isDrawerActive ? 'app-content--not-focused' : ''
+          }`}
+        >
+          <Routes />
+          <Cart />
+          <Search />
+        </div>
       </div>
     </BrowserRouter>
   );
