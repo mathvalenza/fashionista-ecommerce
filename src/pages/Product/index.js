@@ -7,7 +7,7 @@ import { ImagePlaceholder } from 'components';
 
 export default function Product() {
   const { selectedProduct } = useSelector((state) => state.products);
-  const { name, actual_price, image, installments } = selectedProduct;
+  const { name, actual_price, image, installments, sizes } = selectedProduct;
   console.log('selectedProduct: ', selectedProduct);
 
   return (
@@ -24,9 +24,18 @@ export default function Product() {
             <span>Escolha o tamanho</span>
           </div>
           <div className="product__size-options">
-            <button className="product__size-option">P</button>
-            <button className="product__size-option">M</button>
-            <button className="product__size-option">G</button>
+            {sizes &&
+              sizes.map((productSize) => {
+                const buttonClasses = `product__size-option ${
+                  productSize.available ? '' : 'product__size-option--disabled'
+                }`;
+
+                return (
+                  <button key={productSize.sku} className={buttonClasses}>
+                    {productSize.size}
+                  </button>
+                );
+              })}
           </div>
           <button className="product__button">Adicionar à sacola</button>
         </div>

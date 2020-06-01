@@ -48,22 +48,27 @@
 }
 
 .product__size-option {
-  margin-right: 8px;
-}
-
-.product__size-option {
   background-color: white;
   border-radius: 5px;
   border: 1px solid #dfdfdf;
   font-size: 16px;
   font-weight: bold;
+  margin-right: 8px;
   padding: 8px;
-  width: 32px;
+  width: 42px;
 }
 
 .product__size-option:hover {
-  box-shadow: 3px 3px 3px -4px rgba(0, 0, 0, 0.3);
+  border-color: black;
   cursor: pointer;
+}
+
+.product__size-option--disabled {
+  opacity: 0.2;
+}
+
+.product__size-option--disabled:hover {
+  cursor: not-allowed;
 }
 
 .product__button {

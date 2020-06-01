@@ -38,7 +38,6 @@
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap-reverse;
   padding-bottom: 8px;
   margin-bottom: 8px;
 }
@@ -50,14 +49,14 @@
 
 .chosed-product__image {
   margin-bottom: 8px;
-  width: 30%;
+  width: 25%;
 }
 
 .cart__remove {
   background-color: transparent;
   border: none;
   color: #cf3838;
-  width: 30%;
+  width: 25%;
 }
 
 .cart__remove:hover {
@@ -70,11 +69,15 @@
   flex-direction: column;
   align-items: flex-start;
   flex-grow: 2;
-  padding: 0 16px;
+  padding: 0 8px;
+  width: 45%;
+  white-space: pre-wrap;
+  overflow: hidden;
 }
 
 .chosed-product__price {
   text-align: right;
+  width: 30%;
 }
 
 .cart__product-title {
