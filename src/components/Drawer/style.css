@@ -1,16 +1,14 @@
 .drawer {
-  background-color: white;
+  background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 55px);
-  margin-top: 55px;
+  height: 100%;
   position: fixed;
   right: 0;
   top: 0;
   transition: width 1s;
   white-space: nowrap;
   z-index: 9;
-  /* TODO: ver forma de deixar o margin-top dinâmico de acordo com a altura do header */
 }
 
 .drawer--active {
@@ -21,15 +19,16 @@
   width: 0;
 }
 
-@media screen and (min-width: 420px) {
+@media screen and (min-width: 768px) {
   .drawer--active {
     width: 33vw;
   }
 }
 
 .drawer__title {
+  background-color: white;
   font-size: 20px;
-  padding: 16px 32px;
+  padding: 16px;
 }
 
 .drawer__title i {
