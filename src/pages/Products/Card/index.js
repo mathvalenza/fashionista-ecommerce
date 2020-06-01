@@ -6,7 +6,7 @@ import { ImagePlaceholder } from 'components';
 
 export default function ProductCard({ onClick, name, image, actual_price }) {
   const handeClick = () => {
-    onClick(name);
+    onClick();
   };
 
   return (

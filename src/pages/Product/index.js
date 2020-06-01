@@ -1,25 +1,24 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import './style.css';
 
 import { ImagePlaceholder } from 'components';
 
-export default function Product(props) {
-  const { name } = useParams();
+export default function Product() {
+  const { selectedProduct } = useSelector((state) => state.products);
+  const { name, actual_price, image, installments } = selectedProduct;
+  console.log('selectedProduct: ', selectedProduct);
 
   return (
     <div className="container">
       <section className="product">
-        <ImagePlaceholder
-          name={name}
-          image="https://d3l7rqep7l31az.cloudfront.net/images/products/20002605_615_catalog_1.jpg?1460136912"
-        />
+        <ImagePlaceholder name="Nomee" image={image} />
         <div className="product__detail">
           <div className="product__name">{name}</div>
           <div className="product__price">
-            <span className="product__price--black">R$ 199,90</span>
-            <span>em até 3x R$ 66,63</span>
+            <span className="product__price--black">{actual_price}</span>
+            <span>em até {installments}</span>
           </div>
           <div className="product__size">
             <span>Escolha o tamanho</span>

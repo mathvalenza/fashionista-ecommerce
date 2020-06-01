@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import './style.css';
 
-import { setProducts } from 'store/actions/products';
+import { setProducts, setSelectedProduct } from 'store/actions/products';
 
 import Card from './Card';
 
@@ -16,8 +16,10 @@ export default function Products({ history, stateProducts }) {
     dispatch(setProducts());
   }, [dispatch]);
 
-  function handleClick(name) {
-    history.push(`/product/${name}`, { name });
+  function handleClick(product) {
+    history.push(`/product/${product.name}`);
+
+    dispatch(setSelectedProduct(product));
   }
 
   return (
@@ -31,7 +33,11 @@ export default function Products({ history, stateProducts }) {
             <section className="products__cards">
               {productsList &&
                 productsList.map((product, index) => (
-                  <Card key={index} {...product} onClick={handleClick} />
+                  <Card
+                    key={index}
+                    {...product}
+                    onClick={() => handleClick(product)}
+                  />
                 ))}
             </section>
           </React.Fragment>
