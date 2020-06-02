@@ -1,16 +1,16 @@
 .product {
   display: flex;
   flex-direction: column;
+  height: 90vh;
+}
+
+.product__image {
   height: 100%;
 }
 
 @media screen and (min-width: 420px) {
   .product {
     flex-direction: row;
-  }
-
-  .product figure {
-    width: 50%;
   }
 }
 

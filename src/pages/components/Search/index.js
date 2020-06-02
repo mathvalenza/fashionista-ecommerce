@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import './style.css';
 
 import { searchProducts, toggleShowSearch } from 'store/actions/products';
 
-import { Drawer } from 'components';
+import { Drawer, ImagePlaceholder } from 'components';
 
 export default function Search() {
   const dispatch = useDispatch();
@@ -14,19 +14,19 @@ export default function Search() {
     (state) => state.products
   );
 
-  const handleChangeInput = (event) => {
-    setSearch(event.target.value);
+  useEffect(() => {
+    dispatch(searchProducts(search));
+  }, [dispatch, search]);
 
-    // TODO: não chamar a action a cada tecla, esperar o usuário parar de digitar
-    dispatch(searchProducts(event.target.value));
+  const handleChangeInput = (event) => setSearch(event.target.value);
+
+  const handleClose = () => {
+    dispatch(toggleShowSearch());
+    setSearch('');
   };
 
   return (
-    <Drawer
-      title="Buscar produtos"
-      active={showSearch}
-      close={() => dispatch(toggleShowSearch())}
-    >
+    <Drawer title="Buscar produtos" active={showSearch} close={handleClose}>
       <section className="search">
         <div className="search__form">
           <input
@@ -37,9 +37,28 @@ export default function Search() {
           />
         </div>
         <div className="search__content">
-          {filteredProducts.map((product, index) => (
-            <h3 key={index}>{product.name}</h3>
-          ))}
+          {filteredProducts && filteredProducts.length > 0 ? (
+            filteredProducts.map((product, index) => (
+              <section key={index} className="filtered-product">
+                <div className="filtered-product__image">
+                  <ImagePlaceholder image={product.image} />
+                </div>
+                <div className="filtered-product__name">{product.name}</div>
+                <div>
+                  <p className="filtered-product__price">
+                    {product.actual_price}
+                  </p>
+                  <p className="filtered-product__installments">
+                    {product.installments}
+                  </p>
+                </div>
+              </section>
+            ))
+          ) : (
+            <div className="search--empty">
+              <p>Nenhum produto encontrado :(</p>
+            </div>
+          )}
         </div>
       </section>
     </Drawer>

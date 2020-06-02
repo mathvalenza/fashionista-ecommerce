@@ -13,7 +13,10 @@ export default function Product() {
   return (
     <div className="container">
       <section className="product">
-        <ImagePlaceholder name="Nomee" image={image} />
+        <div className="product__image">
+          <ImagePlaceholder image={image} />
+        </div>
+
         <div className="product__detail">
           <div className="product__name">{name}</div>
           <div className="product__price">
@@ -37,6 +40,7 @@ export default function Product() {
                 );
               })}
           </div>
+
           <button className="product__button">Adicionar à sacola</button>
         </div>
       </section>

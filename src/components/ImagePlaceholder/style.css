@@ -4,6 +4,7 @@
 
 .product-image img {
   width: 100%;
+  height: 100%;
 }
 
 .product-image--not-found {
@@ -16,4 +17,10 @@
   background-color: #eee;
   color: #777;
   font-weight: bold;
+  white-space: pre-wrap;
+}
+
+.product-image--not-found p {
+  maring: 0;
+  padding: 8px;
 }

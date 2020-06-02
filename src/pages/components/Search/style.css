@@ -2,6 +2,21 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  height: 100%;
+}
+
+.search--empty {
+  align-items: center;
+  color: #777;
+  display: flex;
+  flex: 1;
+  font-size: 20px;
+  height: 100%;
+}
+
+.search--empty p {
+  text-align: center;
+  margin: 0 auto;
 }
 
 .search__form {
@@ -28,5 +43,37 @@
 }
 
 .search__content {
+  height: 100%;
+  max-height: 80%;
+  overflow-y: auto;
   padding: 16px;
+}
+
+.filtered-product {
+  display: flex;
+  bakcground-color: green;
+  padding-bottom: 8px;
+}
+
+.filtered-product__image {
+  width: 25%;
+}
+
+.filtered-product__name {
+  font-size: 14px;
+  font-weight: bold;
+  width: 50%;
+  white-space: pre-wrap;
+  padding: 0 8px;
+}
+
+.filtered-product__price {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.filtered-product__installments {
+  color: #a7a7a7;
+  font-size: 13px;
 }
