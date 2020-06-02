@@ -2,10 +2,11 @@ import {
   SET_IS_LOADING,
   SET_PRODUCTS,
   SET_SELECTED_PRODUCT,
-  SEARCH_PRODUCTS
+  SEARCH_PRODUCTS,
+  TOGGLE_SHOW_SEARCH
 } from '../types';
 
-import { getProducts } from '../../services/api';
+import { getProducts } from 'services/api';
 
 export function setIsLoading(payload) {
   return {
@@ -30,6 +31,12 @@ export function setSelectedProduct(payload) {
   return {
     type: SET_SELECTED_PRODUCT,
     payload
+  };
+}
+
+export function toggleShowSearch() {
+  return {
+    type: TOGGLE_SHOW_SEARCH
   };
 }
 

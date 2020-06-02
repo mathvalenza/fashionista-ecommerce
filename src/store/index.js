@@ -3,12 +3,10 @@ import thunk from 'redux-thunk';
 
 import products from './reducers/products';
 import cart from './reducers/cart';
-import search from './reducers/search';
 
 const reducers = combineReducers({
   products,
-  cart,
-  search
+  cart
 });
 
 const store = createStore(

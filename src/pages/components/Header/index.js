@@ -6,7 +6,7 @@ import './style.css';
 import logo from 'assets/logo.png';
 
 import { toggleShowCart } from 'store/actions/cart';
-import { toggleShowSearch } from 'store/actions/search';
+import { toggleShowSearch } from 'store/actions/products';
 
 export default function Header() {
   const dispatch = useDispatch();

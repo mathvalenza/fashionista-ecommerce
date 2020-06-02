@@ -12,7 +12,7 @@ import Routes from './routes';
 
 export default function App() {
   const { showCart } = useSelector((state) => state.cart);
-  const { showSearch } = useSelector((state) => state.search);
+  const { showSearch } = useSelector((state) => state.products);
   const isDrawerActive = showCart || showSearch;
 
   return (

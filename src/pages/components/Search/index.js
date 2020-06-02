@@ -3,17 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import './style.css';
 
-import { toggleShowSearch } from 'store/actions/search';
-import { searchProducts } from 'store/actions/products';
+import { searchProducts, toggleShowSearch } from 'store/actions/products';
 
 import { Drawer } from 'components';
 
 export default function Search() {
   const dispatch = useDispatch();
   const [search, setSearch] = useState('');
-  const { showSearch } = useSelector((state) => state.search);
-  // TODO: avaliar se deveria ficar no módulo products ou search
-  const { filteredProducts } = useSelector((state) => state.products);
+  const { filteredProducts, showSearch } = useSelector(
+    (state) => state.products
+  );
 
   const handleChangeInput = (event) => {
     setSearch(event.target.value);
