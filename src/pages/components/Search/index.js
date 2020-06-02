@@ -12,13 +12,14 @@ export default function Search() {
   const dispatch = useDispatch();
   const [search, setSearch] = useState('');
   const { showSearch } = useSelector((state) => state.search);
+  // TODO: avaliar se deveria ficar no módulo products ou search
   const { filteredProducts } = useSelector((state) => state.products);
 
   const handleChangeInput = (event) => {
     setSearch(event.target.value);
 
     // TODO: não chamar a action a cada tecla, esperar o usuário parar de digitar
-    dispatch(searchProducts(search));
+    dispatch(searchProducts(event.target.value));
   };
 
   return (

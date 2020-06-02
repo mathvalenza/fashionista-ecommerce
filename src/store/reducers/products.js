@@ -35,9 +35,11 @@ export default function productsReducer(state = INITIAL_STATE, action) {
     case SEARCH_PRODUCTS:
       return {
         ...state,
-        filteredProducts: state.productsList.filter((product) =>
-          product.name.toUpperCase().includes(action.payload.toUpperCase())
-        )
+        filteredProducts: action.payload
+          ? state.productsList.filter((product) =>
+              product.name.toUpperCase().includes(action.payload.toUpperCase())
+            )
+          : []
       };
 
     default:
