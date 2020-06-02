@@ -8,6 +8,8 @@ import {
 
 import { getProducts } from 'services/api';
 
+const generateIdByName = (name) => name.toLowerCase().replace(/\s+/g, '-');
+
 export function setIsLoading(payload) {
   return {
     type: SET_IS_LOADING,
@@ -21,7 +23,13 @@ export function setProducts() {
 
     const products = await getProducts();
 
-    dispatch({ type: SET_PRODUCTS, payload: products });
+    dispatch({
+      type: SET_PRODUCTS,
+      payload: products.map((product) => ({
+        ...product,
+        id: generateIdByName(product.name)
+      }))
+    });
 
     dispatch({ type: SET_IS_LOADING, payload: false });
   };

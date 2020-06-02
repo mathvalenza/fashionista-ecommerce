@@ -17,7 +17,7 @@ export default function Products({ history, stateProducts }) {
   }, [dispatch]);
 
   function handleClick(product) {
-    history.push(`/product/${product.name}`);
+    history.push(`/product/${product.id}`);
 
     dispatch(setSelectedProduct(product));
   }
