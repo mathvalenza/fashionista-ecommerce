@@ -59,8 +59,15 @@
 }
 
 .product__size-option:hover {
-  border-color: black;
+  background-color: #212529;
+  color: white;
   cursor: pointer;
+}
+
+.product__size-option:active,
+.product__size-option:focus {
+  background-color: #212529;
+  color: white;
 }
 
 .product__size-option--disabled {

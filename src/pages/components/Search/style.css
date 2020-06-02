@@ -17,6 +17,7 @@
 .search--empty p {
   text-align: center;
   margin: 0 auto;
+  white-space: pre-wrap;
 }
 
 .search__form {
