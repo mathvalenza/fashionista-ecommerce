@@ -1,4 +1,9 @@
-import { SET_IS_LOADING, SET_PRODUCTS, SET_SELECTED_PRODUCT } from '../types';
+import {
+  SET_IS_LOADING,
+  SET_PRODUCTS,
+  SET_SELECTED_PRODUCT,
+  SEARCH_PRODUCTS
+} from '../types';
 
 import { getProducts } from '../../services/api';
 
@@ -24,6 +29,13 @@ export function setProducts() {
 export function setSelectedProduct(payload) {
   return {
     type: SET_SELECTED_PRODUCT,
+    payload
+  };
+}
+
+export function searchProducts(payload) {
+  return {
+    type: SEARCH_PRODUCTS,
     payload
   };
 }

@@ -1,9 +1,15 @@
-import { SET_IS_LOADING, SET_PRODUCTS, SET_SELECTED_PRODUCT } from '../types';
+import {
+  SET_IS_LOADING,
+  SET_PRODUCTS,
+  SET_SELECTED_PRODUCT,
+  SEARCH_PRODUCTS
+} from '../types';
 
 const INITIAL_STATE = {
   isLoading: false,
   productsList: [],
-  selectedProduct: {}
+  selectedProduct: {},
+  filteredProducts: []
 };
 
 export default function productsReducer(state = INITIAL_STATE, action) {
@@ -24,6 +30,14 @@ export default function productsReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         selectedProduct: action.payload
+      };
+
+    case SEARCH_PRODUCTS:
+      return {
+        ...state,
+        filteredProducts: state.productsList.filter((product) =>
+          product.name.toUpperCase().includes(action.payload.toUpperCase())
+        )
       };
 
     default:
