@@ -52,8 +52,11 @@
 
 .filtered-product {
   display: flex;
-  bakcground-color: green;
   padding-bottom: 8px;
+}
+
+.filtered-product:hover {
+  cursor: pointer;
 }
 
 .filtered-product__image {

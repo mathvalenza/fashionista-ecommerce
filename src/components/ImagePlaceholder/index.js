@@ -4,11 +4,11 @@ import './style.css';
 
 export default function ImagePlaceholder({ image, name }) {
   return (
-    <div className="product-image">
+    <div className="image">
       {image ? (
         <img src={image} alt={name} />
       ) : (
-        <div className="product-image--not-found">
+        <div className="image--not-found">
           <p>Imagem não disponível :(</p>
         </div>
       )}

@@ -8,7 +8,6 @@ import { ImagePlaceholder } from 'components';
 export default function Product() {
   const { selectedProduct } = useSelector((state) => state.products);
   const { name, actual_price, image, installments, sizes } = selectedProduct;
-  console.log('selectedProduct: ', selectedProduct);
 
   return (
     <div className="container">
