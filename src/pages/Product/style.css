@@ -72,6 +72,10 @@
 
 .product__size-option:active,
 .product__size-option:focus {
+  outline: none;
+}
+
+.product__size-option--active {
   background-color: #212529;
   color: white;
 }
@@ -106,4 +110,9 @@
 .product__button:hover {
   background-color: #212529d2;
   cursor: pointer;
+}
+
+.product__button:active,
+.product__button:focus {
+  outline: none;
 }

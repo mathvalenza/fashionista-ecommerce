@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import './style.css';
@@ -6,8 +6,18 @@ import './style.css';
 import { ImagePlaceholder } from 'components';
 
 export default function Product() {
+  const [selectedSizeSku, setSeltectedSizeSku] = useState(null);
   const { selectedProduct } = useSelector((state) => state.products);
   const { name, actual_price, image, installments, sizes } = selectedProduct;
+
+  const handleClickSize = (sku) => {
+    sku === selectedSizeSku
+      ? setSeltectedSizeSku(null)
+      : setSeltectedSizeSku(sku);
+  };
+
+  const handleClickAdd = () =>
+    console.log('adicionar à sacola ', selectedSizeSku);
 
   return (
     <div className="container">
@@ -30,17 +40,28 @@ export default function Product() {
               sizes.map((productSize) => {
                 const buttonClasses = `product__size-option ${
                   productSize.available ? '' : 'product__size-option--disabled'
-                }`;
+                }
+                  ${
+                    productSize.sku === selectedSizeSku
+                      ? 'product__size-option--active'
+                      : ''
+                  }`;
 
                 return (
-                  <button key={productSize.sku} className={buttonClasses}>
+                  <button
+                    key={productSize.sku}
+                    className={buttonClasses}
+                    onClick={() => handleClickSize(productSize.sku)}
+                  >
                     {productSize.size}
                   </button>
                 );
               })}
           </div>
 
-          <button className="product__button">Adicionar à sacola</button>
+          <button className="product__button" onClick={handleClickAdd}>
+            Adicionar à sacola
+          </button>
         </div>
       </section>
     </div>
