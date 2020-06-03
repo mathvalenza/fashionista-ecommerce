@@ -1,7 +1,7 @@
 import {
   SET_IS_LOADING,
   SET_PRODUCTS,
-  SET_SELECTED_PRODUCT,
+  SET_VISITED_PRODUCT,
   SEARCH_PRODUCTS,
   TOGGLE_SHOW_SEARCH
 } from '../types';
@@ -37,7 +37,7 @@ export function setProducts() {
 
 export function setSelectedProduct(payload) {
   return {
-    type: SET_SELECTED_PRODUCT,
+    type: SET_VISITED_PRODUCT,
     payload
   };
 }

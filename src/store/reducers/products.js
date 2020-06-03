@@ -1,7 +1,7 @@
 import {
   SET_IS_LOADING,
   SET_PRODUCTS,
-  SET_SELECTED_PRODUCT,
+  SET_VISITED_PRODUCT,
   TOGGLE_SHOW_SEARCH,
   SEARCH_PRODUCTS
 } from '../types';
@@ -9,7 +9,7 @@ import {
 const INITIAL_STATE = {
   isLoading: false,
   productsList: [],
-  selectedProduct: {},
+  visitedProduct: {},
   showSearch: false,
   filteredProducts: []
 };
@@ -28,10 +28,10 @@ export default function productsReducer(state = INITIAL_STATE, action) {
         productsList: action.payload
       };
 
-    case SET_SELECTED_PRODUCT:
+    case SET_VISITED_PRODUCT:
       return {
         ...state,
-        selectedProduct: action.payload
+        visitedProduct: action.payload
       };
 
     case TOGGLE_SHOW_SEARCH:

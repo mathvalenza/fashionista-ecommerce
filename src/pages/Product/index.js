@@ -1,23 +1,29 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import './style.css';
+
+import { addToCart } from 'store/actions/cart';
 
 import { ImagePlaceholder } from 'components';
 
 export default function Product() {
-  const [selectedSizeSku, setSeltectedSizeSku] = useState(null);
-  const { selectedProduct } = useSelector((state) => state.products);
-  const { name, actual_price, image, installments, sizes } = selectedProduct;
+  const dispatch = useDispatch();
+  const [selectedSku, setSelectedSku] = useState(null);
+  const { visitedProduct } = useSelector((state) => state.products);
+  const { name, actual_price, image, installments, sizes } = visitedProduct;
 
-  const handleClickSize = (sku) => {
-    sku === selectedSizeSku
-      ? setSeltectedSizeSku(null)
-      : setSeltectedSizeSku(sku);
+  const handleClickSize = (sku) =>
+    sku === selectedSku ? setSelectedSku(null) : setSelectedSku(sku);
+
+  const handleClickAdd = () => {
+    const cartItem = {
+      ...visitedProduct,
+      selectedSku
+    };
+
+    dispatch(addToCart(cartItem));
   };
-
-  const handleClickAdd = () =>
-    console.log('adicionar à sacola ', selectedSizeSku);
 
   return (
     <div className="container">
@@ -42,7 +48,7 @@ export default function Product() {
                   productSize.available ? '' : 'product__size-option--disabled'
                 }
                   ${
-                    productSize.sku === selectedSizeSku
+                    productSize.sku === selectedSku
                       ? 'product__size-option--active'
                       : ''
                   }`;
