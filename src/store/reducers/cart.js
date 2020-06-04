@@ -2,7 +2,9 @@ import { TOGGLE_SHOW_CART, ADD_TO_CART } from '../types';
 
 const INITIAL_STATE = {
   showCart: false,
-  cartItems: []
+  cartItems: [],
+  itemsQuantity: 0,
+  subTotalPrice: 0
 };
 
 export default function cartReducer(state = INITIAL_STATE, action) {
@@ -36,9 +38,13 @@ export default function cartReducer(state = INITIAL_STATE, action) {
             }
           ];
 
+      const newItemsQuantity = state.itemsQuantity + 1;
+
       return {
         ...state,
-        cartItems: newCartItems
+        cartItems: newCartItems,
+        itemsQuantity: newItemsQuantity,
+        subTotalPrice: 10
       };
 
     default:

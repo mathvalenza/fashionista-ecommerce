@@ -9,9 +9,14 @@ import { Drawer, ImagePlaceholder } from 'components';
 
 export default function Cart() {
   const dispatch = useDispatch();
-  const { showCart, cartItems } = useSelector((state) => state.cart);
-  const hasProductsInCart = cartItems.length > 0;
-  const subTotal = 10;
+  const { showCart, cartItems, itemsQuantity, subTotalPrice } = useSelector(
+    (state) => state.cart
+  );
+  const hasProductsInCart = itemsQuantity > 0;
+  const subTotalFormated = `Subtotal: ${subTotalPrice.toLocaleString('pt-br', {
+    style: 'currency',
+    currency: 'BRL'
+  })}`;
 
   const handleRemoveItem = (selectedSku) => {
     console.log('handleRemoveItem: ', selectedSku);
@@ -27,7 +32,7 @@ export default function Cart() {
 
   return (
     <Drawer
-      title={`Sua sacola (${cartItems.length})`}
+      title={`Sua sacola (${itemsQuantity})`}
       active={showCart}
       close={() => dispatch(toggleShowCart())}
     >
@@ -97,12 +102,7 @@ export default function Cart() {
           <p>Sua sacola está vazia :(</p>
         </section>
       )}
-      <section className="cart__footer">
-        {`Subtotal: ${subTotal.toLocaleString('pt-br', {
-          style: 'currency',
-          currency: 'BRL'
-        })}`}
-      </section>
+      <section className="cart__footer">{subTotalFormated}</section>
     </Drawer>
   );
 }
