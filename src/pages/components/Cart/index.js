@@ -10,8 +10,8 @@ import { Drawer, ImagePlaceholder } from 'components';
 export default function Cart() {
   const dispatch = useDispatch();
   const { showCart, cartItems } = useSelector((state) => state.cart);
-  const cartLength = cartItems.length;
-  const hasProductsInCart = cartLength > 0;
+  const hasProductsInCart = cartItems.length > 0;
+  const subTotal = 10;
 
   const handleRemoveItem = (selectedSku) => {
     console.log('handleRemoveItem: ', selectedSku);
@@ -27,7 +27,7 @@ export default function Cart() {
 
   return (
     <Drawer
-      title={`Sua sacola (${cartLength})`}
+      title={`Sua sacola (${cartItems.length})`}
       active={showCart}
       close={() => dispatch(toggleShowCart())}
     >
@@ -97,7 +97,12 @@ export default function Cart() {
           <p>Sua sacola está vazia :(</p>
         </section>
       )}
-      <section className="cart__footer">Subtotal: R$ 0,00</section>
+      <section className="cart__footer">
+        {`Subtotal: ${subTotal.toLocaleString('pt-br', {
+          style: 'currency',
+          currency: 'BRL'
+        })}`}
+      </section>
     </Drawer>
   );
 }

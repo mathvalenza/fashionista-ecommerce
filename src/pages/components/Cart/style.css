@@ -64,6 +64,10 @@
   color: #b63f3f;
 }
 
+.cart__remove:focus {
+  outline: none;
+}
+
 .cart-item__info {
   display: flex;
   flex-direction: column;
