@@ -23,9 +23,9 @@ export default function cartReducer(state = INITIAL_STATE, action) {
             ...state.cartItems.map((item) => ({
               ...item,
               quantity:
-                item.selectedSku === action.payload.selectedSku
-                  ? item.quantity
-                  : item.quantity + 1
+                item.selectedSku === sameProductInCart.selectedSku
+                  ? item.quantity + 1
+                  : item.quantity
             }))
           ]
         : [
