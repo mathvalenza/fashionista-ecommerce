@@ -4,9 +4,7 @@ import { useSelector } from 'react-redux';
 
 import './App.css';
 
-import Header from './pages/components/Header';
-import Cart from './pages/components/Cart';
-import Search from './pages/components/Search';
+import { Header, DrawerCart, DrawerSearch } from 'components';
 
 import Routes from './routes';
 
@@ -25,8 +23,8 @@ export default function App() {
           }`}
         >
           <Routes />
-          <Cart />
-          <Search />
+          <DrawerCart />
+          <DrawerSearch />
         </div>
       </div>
     </BrowserRouter>
