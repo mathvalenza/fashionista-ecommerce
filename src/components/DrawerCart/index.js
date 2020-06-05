@@ -3,7 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import './style.css';
 
-import { toggleShowCart } from 'store/actions/cart';
+import {
+  toggleShowCart,
+  incrementQuantity,
+  decrementQuantity
+} from 'store/actions/cart';
 
 import { Drawer, ImagePlaceholder } from 'components';
 
@@ -22,12 +26,15 @@ export default function Cart() {
     console.log('handleRemoveItem: ', selectedSku);
   };
 
-  const handleSubtractItem = (selectedSku) => {
-    console.log('handleSubtractItem: ', selectedSku);
+  const handleDecrementQuantity = (selectedSku) => {
+    console.log('handleDecrementQuantity: ', selectedSku);
+    dispatch(decrementQuantity(selectedSku));
   };
 
-  const handleAddItem = (selectedSku) => {
-    console.log('handleAddItem: ', selectedSku);
+  const handleIncrementQuantity = (selectedSku) => {
+    console.log('handleIncrementQuantity: ', selectedSku);
+
+    dispatch(incrementQuantity(selectedSku));
   };
 
   return (
@@ -64,7 +71,7 @@ export default function Cart() {
                       <div className="change-quantity">
                         <button
                           className="change-quantity__button"
-                          onClick={() => handleSubtractItem(selectedSku)}
+                          onClick={() => handleDecrementQuantity(selectedSku)}
                         >
                           -
                         </button>
@@ -73,14 +80,14 @@ export default function Cart() {
                         </span>
                         <button
                           className="change-quantity__button"
-                          onClick={() => handleAddItem(selectedSku)}
+                          onClick={() => handleIncrementQuantity(selectedSku)}
                         >
                           +
                         </button>
                       </div>
                     </div>
                     <div className="cart-item__price">
-                      <p className="cart__product-title">R$ {actual_price}</p>
+                      <p className="cart__product-title">{actual_price}</p>
                       <p className="cart__product-subtitle">{installments}</p>
                     </div>
                   </div>

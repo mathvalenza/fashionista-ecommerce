@@ -1,4 +1,9 @@
-import { TOGGLE_SHOW_CART, ADD_TO_CART } from '../types';
+import {
+  TOGGLE_SHOW_CART,
+  ADD_TO_CART,
+  INCREMENT_QUANTITY,
+  DECREMENT_QUANTITY
+} from '../types';
 
 const INITIAL_STATE = {
   showCart: false,
@@ -38,13 +43,46 @@ export default function cartReducer(state = INITIAL_STATE, action) {
             }
           ];
 
-      const newItemsQuantity = state.itemsQuantity + 1;
-
       return {
         ...state,
         cartItems: newCartItems,
-        itemsQuantity: newItemsQuantity,
+        itemsQuantity: state.itemsQuantity + 1,
         subTotalPrice: 10
+      };
+
+    case INCREMENT_QUANTITY:
+      return {
+        ...state,
+        itemsQuantity: state.itemsQuantity + 1,
+        cartItems: [...state.cartItems].map((cartItem) => ({
+          ...cartItem,
+          quantity:
+            cartItem.selectedSku === action.payload
+              ? cartItem.quantity + 1
+              : cartItem.quantity
+        }))
+      };
+
+    case DECREMENT_QUANTITY:
+      const cartItem = state.cartItems.find(
+        ({ selectedSku }) => selectedSku === action.payload
+      );
+
+      if (cartItem.quantity <= 1)
+        return {
+          ...state
+        };
+
+      return {
+        ...state,
+        itemsQuantity: state.itemsQuantity - 1,
+        cartItems: [...state.cartItems].map((cartItem) => ({
+          ...cartItem,
+          quantity:
+            cartItem.selectedSku === action.payload
+              ? cartItem.quantity - 1
+              : cartItem.quantity
+        }))
       };
 
     default:
