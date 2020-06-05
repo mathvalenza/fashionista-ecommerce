@@ -25,6 +25,7 @@
 }
 
 .header__icon {
+  display: flex;
   font-size: 18px;
 }
 
@@ -35,4 +36,24 @@
 .header__icon:hover {
   color: #212529d2;
   cursor: pointer;
+}
+
+.icon__badge {
+  background-color: green;
+  border-radius: 50%;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  height: 20px;
+  min-width: 20px;
+  padding-top: 2px;
+  position: absolute;
+  text-align: center;
+  transform: translateX(8px) translateY(-14px);
+  vertical-align: center;
+  z-index: -1;
+}
+
+.icon__badge--new {
+  background-color: red;
 }

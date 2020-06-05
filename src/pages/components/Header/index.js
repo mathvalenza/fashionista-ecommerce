@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import './style.css';
 import logo from 'assets/logo.png';
@@ -10,6 +10,7 @@ import { toggleShowSearch } from 'store/actions/products';
 
 export default function Header() {
   const dispatch = useDispatch();
+  const { itemsQuantity } = useSelector((state) => state.cart);
 
   return (
     <header className="header">
@@ -31,6 +32,9 @@ export default function Header() {
             onClick={() => dispatch(toggleShowCart())}
           >
             <i className="fa fa-shopping-cart"></i>
+            {itemsQuantity > 0 && (
+              <div className="icon__badge">{itemsQuantity}</div>
+            )}
           </div>
         </div>
       </div>
