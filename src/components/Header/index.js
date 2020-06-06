@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { itemsQuantitySelector } from 'store/selectors/cart';
+
 import './style.css';
 import logo from 'assets/logo.png';
 
@@ -10,7 +12,7 @@ import { toggleShowSearch } from 'store/actions/products';
 
 export default function Header() {
   const dispatch = useDispatch();
-  const { itemsQuantity } = useSelector((state) => state.cart);
+  const itemsQuantity = useSelector(itemsQuantitySelector);
 
   return (
     <header className="header">

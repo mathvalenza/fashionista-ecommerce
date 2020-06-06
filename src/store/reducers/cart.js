@@ -7,9 +7,7 @@ import {
 
 const INITIAL_STATE = {
   showCart: false,
-  cartItems: [],
-  itemsQuantity: 0,
-  subTotalPrice: 0
+  cartItems: []
 };
 
 export default function cartReducer(state = INITIAL_STATE, action) {
@@ -45,15 +43,12 @@ export default function cartReducer(state = INITIAL_STATE, action) {
 
       return {
         ...state,
-        cartItems: newCartItems,
-        itemsQuantity: state.itemsQuantity + 1,
-        subTotalPrice: 10
+        cartItems: newCartItems
       };
 
     case INCREMENT_QUANTITY:
       return {
         ...state,
-        itemsQuantity: state.itemsQuantity + 1,
         cartItems: [...state.cartItems].map((cartItem) => ({
           ...cartItem,
           quantity:
@@ -75,7 +70,6 @@ export default function cartReducer(state = INITIAL_STATE, action) {
 
       return {
         ...state,
-        itemsQuantity: state.itemsQuantity - 1,
         cartItems: [...state.cartItems].map((cartItem) => ({
           ...cartItem,
           quantity:

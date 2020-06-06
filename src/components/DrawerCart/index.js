@@ -9,13 +9,15 @@ import {
   decrementQuantity
 } from 'store/actions/cart';
 
+import { subTotalSelector, itemsQuantitySelector } from 'store/selectors/cart';
+
 import { Drawer, ImagePlaceholder } from 'components';
 
 export default function Cart() {
   const dispatch = useDispatch();
-  const { showCart, cartItems, itemsQuantity, subTotalPrice } = useSelector(
-    (state) => state.cart
-  );
+  const { showCart, cartItems } = useSelector((state) => state.cart);
+  const subTotalPrice = useSelector(subTotalSelector);
+  const itemsQuantity = useSelector(itemsQuantitySelector);
   const hasProductsInCart = itemsQuantity > 0;
   const subTotalFormated = `Subtotal: ${subTotalPrice.toLocaleString('pt-br', {
     style: 'currency',
