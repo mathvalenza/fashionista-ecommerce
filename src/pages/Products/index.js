@@ -30,14 +30,12 @@ export default function Products({ history, stateProducts }) {
         ) : (
           <React.Fragment>
             <h3 className="products__title">{productsList.length} itens</h3>
-            <section className="products__cards">
+            <section className="products__list">
               {productsList &&
                 productsList.map((product, index) => (
-                  <Card
-                    key={index}
-                    {...product}
-                    onClick={() => handleClick(product)}
-                  />
+                  <div key={index} className="products__item">
+                    <Card {...product} onClick={() => handleClick(product)} />
+                  </div>
                 ))}
             </section>
           </React.Fragment>

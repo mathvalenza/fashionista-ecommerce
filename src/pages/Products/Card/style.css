@@ -1,6 +1,8 @@
 .product-card {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  margin: 4px;
 }
 
 .product-card:hover {
@@ -8,13 +10,24 @@
   cursor: pointer;
 }
 
+.product-card__image {
+  height: 100%;
+  position: relative;
+}
+
+.product-card__sale {
+  right: 0;
+  position: absolute;
+}
+
 .product-card__name {
   color: #212529;
   font-size: 14px;
-  font-weight: bold;
-  margin: 8px 0 4px 0;
+  overflow: hidden;
   text-align: center;
-  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .product-card__price {

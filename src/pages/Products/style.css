@@ -1,9 +1,5 @@
 .products {
-  padding: 16px 0;
-}
-
-.container .products {
-  padding: 0 16px;
+  padding: 16px;
 }
 
 .products__title {
@@ -11,16 +7,18 @@
   font-size: 16px;
 }
 
-.container .products__cards {
-  column-gap: 4px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  row-gap: 8px;
+.products__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.products__item {
+  margin-bottom: 8px;
+  width: 50%;
 }
 
 @media screen and (min-width: 768px) {
-  .container .products__cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  .products__item {
+    width: 25%;
   }
 }
