@@ -29,7 +29,9 @@ export default function Products({ history, stateProducts }) {
           <h1>Carregando...</h1>
         ) : (
           <React.Fragment>
-            <h3 className="products__title">{productsList.length} itens</h3>
+            <h3 className="products__title">
+              Exibindo {productsList.length} itens
+            </h3>
             <section className="products__list">
               {productsList &&
                 productsList.map((product, index) => (

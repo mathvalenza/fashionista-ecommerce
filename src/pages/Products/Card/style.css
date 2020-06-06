@@ -6,8 +6,9 @@
 }
 
 .product-card:hover {
-  box-shadow: 3px 3px 12px -4px rgba(0, 0, 0, 0.3);
   cursor: pointer;
+  transform: scale(1.02);
+  transition: 0.5s;
 }
 
 .product-card__image {
