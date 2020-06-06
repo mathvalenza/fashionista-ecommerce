@@ -14,7 +14,9 @@ export default function ProductCard({
   return (
     <section onClick={() => onClick()} className="product-card">
       <div className="product-card__image">
-        <div className="product-card__sale">{discount_percentage}</div>
+        {discount_percentage && (
+          <div className="product-card__sale">{discount_percentage}</div>
+        )}
         <ImagePlaceholder name={name} image={image} />
       </div>
       <h3 className="product-card__name">{name}</h3>

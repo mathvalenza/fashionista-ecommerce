@@ -16,8 +16,15 @@
 }
 
 .product-card__sale {
-  right: 0;
+  background-color: #683f4b;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px;
   position: absolute;
+  right: 0;
 }
 
 .product-card__name {
@@ -32,5 +39,6 @@
 
 .product-card__price {
   font-size: 14px;
+  padding-bottom: 4px;
   text-align: center;
 }
