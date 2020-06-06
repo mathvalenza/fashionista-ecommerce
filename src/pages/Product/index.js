@@ -17,14 +17,14 @@ export default function Product() {
     sku === selectedSku ? setSelectedSku(null) : setSelectedSku(sku);
 
   const handleClickAdd = () => {
-    if (!selectedSku) return true;
+    if (selectedSku) {
+      const cartItem = {
+        ...visitedProduct,
+        selectedSku
+      };
 
-    const cartItem = {
-      ...visitedProduct,
-      selectedSku
-    };
-
-    dispatch(addToCart(cartItem));
+      dispatch(addToCart(cartItem));
+    }
   };
 
   return (
