@@ -1,6 +1,6 @@
 import {
   SET_IS_LOADING,
-  SET_PRODUCTS,
+  SET_PRODUCTS_LIST,
   SET_VISITED_PRODUCT,
   TOGGLE_SHOW_SEARCH
 } from '../types';
@@ -20,7 +20,7 @@ export default function productsReducer(state = INITIAL_STATE, action) {
         isLoading: action.payload
       };
 
-    case SET_PRODUCTS:
+    case SET_PRODUCTS_LIST:
       return {
         ...state,
         productsList: action.payload

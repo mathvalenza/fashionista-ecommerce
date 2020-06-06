@@ -1,6 +1,6 @@
 import {
   SET_IS_LOADING,
-  SET_PRODUCTS,
+  SET_PRODUCTS_LIST,
   SET_VISITED_PRODUCT,
   TOGGLE_SHOW_SEARCH
 } from '../types';
@@ -23,7 +23,7 @@ export function setProducts() {
     const products = await getProducts();
 
     dispatch({
-      type: SET_PRODUCTS,
+      type: SET_PRODUCTS_LIST,
       payload: products.map((product) => ({
         ...product,
         id: generateIdByName(product.name)
