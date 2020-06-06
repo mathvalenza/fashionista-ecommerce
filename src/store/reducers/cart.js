@@ -1,6 +1,7 @@
 import {
   TOGGLE_SHOW_CART,
   ADD_TO_CART,
+  REMOVE_FROM_CART,
   INCREMENT_QUANTITY,
   DECREMENT_QUANTITY
 } from '../types';
@@ -46,10 +47,18 @@ export default function cartReducer(state = INITIAL_STATE, action) {
         cartItems: newCartItems
       };
 
+    case REMOVE_FROM_CART:
+      return {
+        ...state,
+        cartItems: state.cartItems.filter(
+          ({ selectedSku }) => selectedSku !== action.payload
+        )
+      };
+
     case INCREMENT_QUANTITY:
       return {
         ...state,
-        cartItems: [...state.cartItems].map((cartItem) => ({
+        cartItems: state.cartItems.map((cartItem) => ({
           ...cartItem,
           quantity:
             cartItem.selectedSku === action.payload
@@ -70,7 +79,7 @@ export default function cartReducer(state = INITIAL_STATE, action) {
 
       return {
         ...state,
-        cartItems: [...state.cartItems].map((cartItem) => ({
+        cartItems: state.cartItems.map((cartItem) => ({
           ...cartItem,
           quantity:
             cartItem.selectedSku === action.payload

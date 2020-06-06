@@ -1,6 +1,7 @@
 import {
   TOGGLE_SHOW_CART,
   ADD_TO_CART,
+  REMOVE_FROM_CART,
   INCREMENT_QUANTITY,
   DECREMENT_QUANTITY
 } from '../types';
@@ -14,6 +15,13 @@ export function toggleShowCart() {
 export function addToCart(payload) {
   return {
     type: ADD_TO_CART,
+    payload
+  };
+}
+
+export function removeFromCart(payload) {
+  return {
+    type: REMOVE_FROM_CART,
     payload
   };
 }

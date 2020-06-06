@@ -6,7 +6,8 @@ import './style.css';
 import {
   toggleShowCart,
   incrementQuantity,
-  decrementQuantity
+  decrementQuantity,
+  removeFromCart
 } from 'store/actions/cart';
 
 import { subTotalSelector, itemsQuantitySelector } from 'store/selectors/cart';
@@ -24,9 +25,8 @@ export default function Cart() {
     currency: 'BRL'
   })}`;
 
-  const handleRemoveItem = (selectedSku) => {
-    console.log('handleRemoveItem: ', selectedSku);
-  };
+  const handleRemoveItem = (selectedSku) =>
+    dispatch(removeFromCart(selectedSku));
 
   const handleDecrementQuantity = (selectedSku) =>
     dispatch(decrementQuantity(selectedSku));
