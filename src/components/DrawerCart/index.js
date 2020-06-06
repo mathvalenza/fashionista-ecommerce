@@ -21,7 +21,7 @@ export default function Cart() {
   const subTotalPrice = useSelector(subTotalSelector);
   const itemsQuantity = useSelector(itemsQuantitySelector);
   const hasProductsInCart = itemsQuantity > 0;
-  const subTotalFormated = `Subtotal: ${numberToCurrency(subTotalPrice)}}`;
+  const subTotalFormated = `Subtotal: ${numberToCurrency(subTotalPrice)}`;
 
   const handleRemoveItem = (selectedSku) =>
     dispatch(removeFromCart(selectedSku));
