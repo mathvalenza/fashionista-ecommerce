@@ -63,7 +63,9 @@ export default function Product() {
                   <button
                     key={productSize.sku}
                     className={buttonClasses}
-                    onClick={() => handleClickSize(productSize.sku)}
+                    onClick={() =>
+                      productSize.available && handleClickSize(productSize.sku)
+                    }
                   >
                     {productSize.size}
                   </button>
