@@ -19,8 +19,10 @@ export default function ProductCard({
         )}
         <ImagePlaceholder name={name} image={image} />
       </div>
-      <h3 className="product-card__name">{name}</h3>
-      <div className="product-card__price">{actual_price}</div>
+      <div className="product-card__info">
+        <h3 className="product-card__name">{name}</h3>
+        <div className="product-card__price">{actual_price}</div>
+      </div>
     </section>
   );
 }
