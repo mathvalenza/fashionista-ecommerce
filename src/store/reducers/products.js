@@ -2,16 +2,14 @@ import {
   SET_IS_LOADING,
   SET_PRODUCTS,
   SET_VISITED_PRODUCT,
-  TOGGLE_SHOW_SEARCH,
-  SEARCH_PRODUCTS
+  TOGGLE_SHOW_SEARCH
 } from '../types';
 
 const INITIAL_STATE = {
   isLoading: false,
   productsList: [],
   visitedProduct: {},
-  showSearch: false,
-  filteredProducts: []
+  showSearch: false
 };
 
 export default function productsReducer(state = INITIAL_STATE, action) {
@@ -38,16 +36,6 @@ export default function productsReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         showSearch: !state.showSearch
-      };
-
-    case SEARCH_PRODUCTS:
-      return {
-        ...state,
-        filteredProducts: action.payload
-          ? state.productsList.filter((product) =>
-              product.name.toUpperCase().includes(action.payload.toUpperCase())
-            )
-          : []
       };
 
     default:

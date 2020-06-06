@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import './style.css';
 
-import {
-  searchProducts,
-  toggleShowSearch,
-  setSelectedProduct
-} from 'store/actions/products';
+import { toggleShowSearch, setSelectedProduct } from 'store/actions/products';
+
+import { searchSelector } from 'store/selectors/search';
 
 import { Drawer, ImagePlaceholder } from 'components';
 
@@ -16,13 +14,8 @@ export default function Search() {
   const history = useHistory();
   const dispatch = useDispatch();
   const [search, setSearch] = useState('');
-  const { filteredProducts, showSearch } = useSelector(
-    (state) => state.products
-  );
-
-  useEffect(() => {
-    dispatch(searchProducts(search));
-  }, [dispatch, search]);
+  const { showSearch } = useSelector((state) => state.products);
+  const filteredProducts = useSelector(searchSelector(search));
 
   const handleChangeInput = (event) => setSearch(event.target.value);
 

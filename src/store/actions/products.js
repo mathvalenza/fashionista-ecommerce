@@ -2,7 +2,6 @@ import {
   SET_IS_LOADING,
   SET_PRODUCTS,
   SET_VISITED_PRODUCT,
-  SEARCH_PRODUCTS,
   TOGGLE_SHOW_SEARCH
 } from '../types';
 
@@ -45,12 +44,5 @@ export function setSelectedProduct(payload) {
 export function toggleShowSearch() {
   return {
     type: TOGGLE_SHOW_SEARCH
-  };
-}
-
-export function searchProducts(payload) {
-  return {
-    type: SEARCH_PRODUCTS,
-    payload
   };
 }

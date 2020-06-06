@@ -1,7 +1,6 @@
 import { createSelector } from 'reselect';
 
-const currencyToNumber = (value = '') =>
-  Number(value.split('R$')[1].replace(/,/g, '.'));
+import { currencyToNumber } from 'utils';
 
 const subTotalSelector = createSelector(
   (state) => state.cart.cartItems,
