@@ -1,12 +1,16 @@
 import { createSelector } from 'reselect';
 
+const currencyToNumber = (value = '') =>
+  Number(value.split('R$')[1].replace(/,/g, '.'));
+
 const subTotalSelector = createSelector(
   (state) => state.cart.cartItems,
-  (cartItems) => {
-    console.log('aaaaaaaa');
-
-    return cartItems.reduce((acc, cartItem) => acc + 10, 0);
-  }
+  (cartItems) =>
+    cartItems.reduce(
+      (acc, cartItem) =>
+        acc + currencyToNumber(cartItem.actual_price) * cartItem.quantity,
+      0
+    )
 );
 
 const itemsQuantitySelector = createSelector(

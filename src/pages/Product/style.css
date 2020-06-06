@@ -116,3 +116,11 @@
 .product__button:focus {
   outline: none;
 }
+
+.product__button--disabled {
+  opacity: 0.4;
+}
+
+.product__button--disabled:hover {
+  cursor: not-allowed;
+}

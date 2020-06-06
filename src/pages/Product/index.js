@@ -17,6 +17,8 @@ export default function Product() {
     sku === selectedSku ? setSelectedSku(null) : setSelectedSku(sku);
 
   const handleClickAdd = () => {
+    if (!selectedSku) return true;
+
     const cartItem = {
       ...visitedProduct,
       selectedSku
@@ -44,12 +46,16 @@ export default function Product() {
           <div className="product__size-options">
             {sizes &&
               sizes.map((productSize) => {
-                const buttonClasses = `product__size-option ${
-                  productSize.available ? '' : 'product__size-option--disabled'
-                }
-                  ${
+                const buttonClasses =
+                  'product__size-option' +
+                  `${
+                    productSize.available
+                      ? ''
+                      : ' product__size-option--disabled'
+                  }` +
+                  `${
                     productSize.sku === selectedSku
-                      ? 'product__size-option--active'
+                      ? ' product__size-option--active'
                       : ''
                   }`;
 
@@ -65,7 +71,13 @@ export default function Product() {
               })}
           </div>
 
-          <button className="product__button" onClick={handleClickAdd}>
+          <button
+            className={
+              'product__button' +
+              `${selectedSku ? '' : ' product__button--disabled'}`
+            }
+            onClick={handleClickAdd}
+          >
             Adicionar à sacola
           </button>
         </div>

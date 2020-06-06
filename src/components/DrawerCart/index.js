@@ -28,16 +28,11 @@ export default function Cart() {
     console.log('handleRemoveItem: ', selectedSku);
   };
 
-  const handleDecrementQuantity = (selectedSku) => {
-    console.log('handleDecrementQuantity: ', selectedSku);
+  const handleDecrementQuantity = (selectedSku) =>
     dispatch(decrementQuantity(selectedSku));
-  };
 
-  const handleIncrementQuantity = (selectedSku) => {
-    console.log('handleIncrementQuantity: ', selectedSku);
-
+  const handleIncrementQuantity = (selectedSku) =>
     dispatch(incrementQuantity(selectedSku));
-  };
 
   return (
     <Drawer
