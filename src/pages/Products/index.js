@@ -12,9 +12,7 @@ export default function Products({ history, stateProducts }) {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(setProducts());
-  }, [dispatch]);
+  useEffect(() => dispatch(setProducts()), [dispatch]);
 
   function handleClick(product) {
     history.push(`/product/${product.id}`);
@@ -30,7 +28,7 @@ export default function Products({ history, stateProducts }) {
         ) : (
           <React.Fragment>
             <h3 className="products__title">
-              Exibindo {productsList.length} itens
+              Exibindo {productsList.length} itens | Versão 1
             </h3>
             <section className="products__list">
               {productsList &&

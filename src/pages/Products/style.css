@@ -8,17 +8,20 @@
 }
 
 .products__list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  width: 100%;
 }
 
 .products__item {
   margin-bottom: 8px;
-  width: 50%;
+  min-height: 300px;
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
   .products__item {
-    width: 25%;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
   }
 }
