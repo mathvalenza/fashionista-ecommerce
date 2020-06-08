@@ -56,12 +56,11 @@
   background-color: transparent;
   border: none;
   color: #cf3838;
-  width: 25%;
 }
 
 .cart__remove:hover {
   cursor: pointer;
-  color: #b63f3f;
+  color: #ac3434;
 }
 
 .cart__remove:focus {
@@ -100,18 +99,17 @@
 }
 
 .change-quantity__button {
+  align-items: center;
   background-color: transparent;
   border-radius: 3px;
   border: 1px solid black;
+  display: flex;
   height: 20px;
+  justify-content: center;
   line-height: 20px;
+  padding: auto;
   text-align: center;
   width: 26px;
-  padding: auto;
-}
-
-.change-quantity__button i {
-  padding: 0 auto;
 }
 
 .change-quantity__button:focus {

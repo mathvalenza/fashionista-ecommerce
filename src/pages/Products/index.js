@@ -30,7 +30,7 @@ export default function Products({ history, stateProducts }) {
         ) : (
           <React.Fragment>
             <h3 className="products__title">
-              Exibindo {productsList.length} itens | Versão 1
+              Exibindo {productsList.length} itens | Versão 2
             </h3>
             <section className="products__list">
               {productsList &&
