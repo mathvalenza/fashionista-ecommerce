@@ -11,7 +11,16 @@ export default function Product() {
   const dispatch = useDispatch();
   const [selectedSku, setSelectedSku] = useState(null);
   const { visitedProduct } = useSelector((state) => state.products);
-  const { name, actual_price, image, installments, sizes } = visitedProduct;
+  const {
+    name,
+    actual_price,
+    image,
+    installments,
+    sizes,
+    discount_percentage,
+    regular_price,
+    on_sale
+  } = visitedProduct;
 
   const handleClickSize = (sku) =>
     sku === selectedSku ? setSelectedSku(null) : setSelectedSku(sku);
@@ -31,14 +40,20 @@ export default function Product() {
     <div className="container">
       <section className="product">
         <div className="product__image">
+          {discount_percentage && (
+            <div className="product__sale">{discount_percentage}</div>
+          )}
           <ImagePlaceholder image={image} />
         </div>
 
         <div className="product__detail">
           <div className="product__name">{name}</div>
-          <div className="product__price">
-            <span className="product__price--black">{actual_price}</span>
-            <span>em até {installments}</span>
+          <div className="product__info">
+            {on_sale && (
+              <span className="product__regular-price">{regular_price}</span>
+            )}
+            <span className="product__price">{actual_price}</span>
+            <span className="product__installments">em até {installments}</span>
           </div>
           <div className="product__size">
             <span>Escolha o tamanho</span>
