@@ -12,7 +12,9 @@ export default function Products({ history, stateProducts }) {
 
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(setProducts()), [dispatch]);
+  useEffect(() => {
+    dispatch(setProducts());
+  }, [dispatch]);
 
   function handleClick(product) {
     history.push(`/product/${product.id}`);
