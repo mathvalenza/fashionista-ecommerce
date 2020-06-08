@@ -17,7 +17,7 @@
 }
 
 .product-card__sale {
-  background-color: #683f4b;
+  background-color: var(--highlight-color);
   border-bottom-left-radius: 8px;
   border-top-right-radius: 8px;
   color: white;
@@ -29,7 +29,7 @@
 }
 
 .product-card__name {
-  color: #212529;
+  color: var(--font-color);
   font-size: 14px;
   overflow: hidden;
   text-align: center;

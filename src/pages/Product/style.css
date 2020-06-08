@@ -6,6 +6,7 @@
 }
 
 .product__image {
+  opacity: 0.5;
   height: 100%;
   min-width: 80%;
 }
@@ -33,7 +34,7 @@
 }
 
 .product__price {
-  color: #a7a7a7;
+  color: var(--font-color-light);
   font-weight: bold;
   margin-bottom: 16px;
 }
@@ -44,7 +45,7 @@
 }
 
 .product__size {
-  color: #a7a7a7;
+  color: var(--font-color-light);
   font-size: 14px;
 }
 
@@ -74,7 +75,7 @@
 }
 
 .product__size-option--active {
-  background-color: #212529;
+  background-color: var(--button-bg-color);
   color: white;
 }
 
@@ -87,7 +88,7 @@
 }
 
 .product__button {
-  background-color: #212529;
+  background-color: var(--button-bg-color);
   border-radius: 8px;
   border: none;
   bottom: 16px;
@@ -106,8 +107,8 @@
 }
 
 .product__button:hover {
-  background-color: #212529d2;
   cursor: pointer;
+  opacity: 0.8;
 }
 
 .product__button:active,
@@ -121,4 +122,5 @@
 
 .product__button--disabled:hover {
   cursor: not-allowed;
+  opacity: 0.4;
 }

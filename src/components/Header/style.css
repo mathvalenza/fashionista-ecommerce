@@ -35,12 +35,11 @@
 }
 
 .header__icon:hover {
-  color: #212529d2;
   cursor: pointer;
 }
 
 .icon__badge {
-  background-color: #683f4b;
+  background-color: var(--highlight-color);
   border-radius: 50%;
   color: white;
   font-size: 13px;

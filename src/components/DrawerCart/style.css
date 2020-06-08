@@ -11,7 +11,7 @@
 }
 
 .cart--empty p {
-  color: #777;
+  color: var(--font-color-light);
   font-size: 20px;
   margin: 0 auto;
 }
@@ -28,7 +28,7 @@
 }
 
 .cart__footer {
-  background-color: #212529;
+  background-color: var(--button-bg-color);
   color: white;
   font-weight: bold;
   padding: 16px;
@@ -55,12 +55,12 @@
 .cart__remove {
   background-color: transparent;
   border: none;
-  color: #cf3838;
+  color: var(--danger-color);
 }
 
 .cart__remove:hover {
   cursor: pointer;
-  color: #ac3434;
+  opacity: 0.8;
 }
 
 .cart__remove:focus {
@@ -90,7 +90,7 @@
 }
 
 .cart__product-subtitle {
-  color: #a7a7a7;
+  color: var(--font-color-light);
   font-size: 13px;
 }
 
@@ -117,7 +117,7 @@
 }
 
 .change-quantity__button:hover {
-  background-color: #212529;
+  background-color: var(--button-bg-color);
   color: white;
   cursor: pointer;
 }

@@ -7,7 +7,7 @@
 
 .search--empty {
   align-items: center;
-  color: #777;
+  color: var(--font-color-light);
   display: flex;
   flex: 1;
   font-size: 20px;
@@ -21,17 +21,17 @@
 }
 
 .search__form {
-  background-color: #f6f6f6;
+  background-color: var(--bg-color);
   display: flex;
   padding: 16px;
 }
 
 .search__input {
-  background: #fff;
+  background: white;
   border-radius: 4px;
   border: none;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2);
-  color: #212529;
+  color: var(--font-color);
   font-size: 16px;
   font-weight: bold;
   outline: none;
@@ -40,7 +40,7 @@
 }
 
 .search__input::placeholder {
-  color: #bbb;
+  color: var(--font-color-light);
 }
 
 .search__content {
@@ -51,6 +51,7 @@
 }
 
 .filtered-product {
+  color: var(--font-color);
   display: flex;
   padding-bottom: 8px;
 }
@@ -78,6 +79,6 @@
 }
 
 .filtered-product__installments {
-  color: #a7a7a7;
+  color: var(--font-color-light);
   font-size: 13px;
 }
