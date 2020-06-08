@@ -106,11 +106,12 @@
   height: 20px;
   line-height: 20px;
   text-align: center;
-  width: 24px;
+  width: 26px;
+  padding: auto;
 }
 
 .change-quantity__button i {
-  padding: 0;
+  padding: 0 auto;
 }
 
 .change-quantity__button:focus {

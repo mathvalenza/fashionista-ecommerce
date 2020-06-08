@@ -65,13 +65,11 @@
 }
 
 .product__size-option:hover {
-  background-color: #212529;
-  color: white;
   cursor: pointer;
 }
 
 .product__size-option:active,
-.product__size-option:focus {
+.product__size-option:focus-within {
   outline: none;
 }
 
