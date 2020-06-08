@@ -67,7 +67,7 @@ export default function Cart() {
                             className="change-quantity__button"
                             onClick={() => handleDecrementQuantity(selectedSku)}
                           >
-                            -
+                            <i className="fa fa-minus"></i>
                           </button>
                           <span className="change-quantity__current">
                             {quantity}
@@ -76,7 +76,7 @@ export default function Cart() {
                             className="change-quantity__button"
                             onClick={() => handleIncrementQuantity(selectedSku)}
                           >
-                            +
+                            <i className="fa fa-plus"></i>
                           </button>
                         </div>
                       </div>
