@@ -59,7 +59,7 @@ export default function Products({ history, stateProducts }) {
                 </select>
               </div>
             </div>
-            <section className="products__list">
+            <section className="products__list" data-testid="products-list">
               {productsList &&
                 productsList.map((product, index) => (
                   <div key={index} className="products__item">

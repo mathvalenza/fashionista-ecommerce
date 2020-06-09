@@ -78,6 +78,7 @@ export default function Product() {
                   <button
                     key={productSize.sku}
                     className={buttonClasses}
+                    data-testid="product-size"
                     onClick={() =>
                       productSize.available && handleClickSize(productSize.sku)
                     }
@@ -93,6 +94,7 @@ export default function Product() {
               'product__button' +
               `${selectedSku ? '' : ' product__button--disabled'}`
             }
+            data-testid="product-button"
             onClick={handleClickAdd}
           >
             Adicionar à sacola

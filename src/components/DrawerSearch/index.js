@@ -39,11 +39,12 @@ export default function Search() {
           <input
             className="search__input"
             placeholder="Pesquise por um produto..."
+            data-testid="search-input"
             value={search}
             onChange={(event) => handleChangeInput(event)}
           />
         </div>
-        <div className="search__content">
+        <div className="search__content" data-testid="search-content">
           {filteredProducts && filteredProducts.length > 0 ? (
             filteredProducts.map((product, index) => (
               <section

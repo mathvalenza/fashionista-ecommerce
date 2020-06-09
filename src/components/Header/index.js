@@ -25,6 +25,7 @@ export default function Header() {
         <div className="header__right">
           <div
             className="header__icon"
+            data-testid="search-icon"
             onClick={() => dispatch(toggleShowSearch())}
           >
             <i className="fa fa-search"></i>
