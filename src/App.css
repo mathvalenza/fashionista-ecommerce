@@ -13,6 +13,11 @@ body {
   background-color: var(--bg-color);
 }
 
+.app-content {
+  margin-top: var(--header-height);
+  height: calc(100vh - var(--header-height));
+}
+
 .app-content--not-focused::after {
   backface-visibility: visible;
   background: radial-gradient(ellipse at center, #7a7a7a 0, #000 100%);
@@ -24,11 +29,6 @@ body {
   visibility: visible;
   width: 100vw;
   z-index: 5;
-}
-
-.app-content {
-  margin-top: var(--header-height);
-  height: calc(100vh - var(--header-height));
 }
 
 .container {

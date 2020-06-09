@@ -6,7 +6,7 @@ import './style.css';
 
 import { toggleShowSearch, setSelectedProduct } from 'store/actions/products';
 
-import { searchSelector } from 'store/selectors/search';
+import { searchSelector } from 'store/selectors/products';
 
 import { Drawer, ImagePlaceholder } from 'components';
 

@@ -7,4 +7,6 @@ const numberToCurrency = (value = 0) =>
     currency: 'BRL'
   });
 
-export { numberToCurrency, currencyToNumber };
+const percentageToNumber = (value = '') => value.split('%')[0];
+
+export { numberToCurrency, currencyToNumber, percentageToNumber };
