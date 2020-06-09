@@ -25,3 +25,37 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
   }
 }
+
+.loading {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.02);
+  color: var(--highlight-color);
+  display: flex;
+  font-size: 32px;
+  font-weight: bold;
+  height: 100%;
+  justify-content: center;
+}
+
+.loading__content {
+  text-align: center;
+  width: 300px;
+}
+
+.loading__message {
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: loading;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+}
+
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

@@ -5,6 +5,7 @@ body {
   --highlight-color: #683f4b;
   --bg-color: #f9f9f9;
   --danger-color: #cf3838;
+  --header-height: 55px;
   font-family: Noto Sans SC, sans-serif;
 }
 
@@ -26,7 +27,8 @@ body {
 }
 
 .app-content {
-  margin-top: 55px;
+  margin-top: var(--header-height);
+  height: calc(100vh - var(--header-height));
 }
 
 .container {

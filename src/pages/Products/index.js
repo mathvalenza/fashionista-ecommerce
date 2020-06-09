@@ -23,12 +23,16 @@ export default function Products({ history, stateProducts }) {
   }
 
   return (
-    <div className="container">
-      <div className="products">
-        {isLoading ? (
-          <h1>Carregando...</h1>
-        ) : (
-          <React.Fragment>
+    <React.Fragment>
+      {isLoading ? (
+        <div className="loading">
+          <div className="loading__content">
+            <div className="loading__message">Carregando...</div>
+          </div>
+        </div>
+      ) : (
+        <div className="container">
+          <div className="products">
             <h3 className="products__title">
               Exibindo {productsList.length} itens
             </h3>
@@ -40,9 +44,9 @@ export default function Products({ history, stateProducts }) {
                   </div>
                 ))}
             </section>
-          </React.Fragment>
-        )}
-      </div>
-    </div>
+          </div>
+        </div>
+      )}
+    </React.Fragment>
   );
 }
