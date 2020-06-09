@@ -38,6 +38,14 @@ describe('Products', () => {
 
     cy.url().should('include', '/product/');
 
+    cy.get('[data-testid="product-button"]').click();
+
+    cy.window()
+      .its('store')
+      .invoke('getState')
+      .its('cart.cartItems')
+      .should('have.length', 0);
+
     cy.get('[data-testid="product-size"]').contains('M').click();
 
     cy.get('[data-testid="product-button"]').click();
