@@ -15,8 +15,8 @@
 }
 
 .search--empty p {
-  text-align: center;
   margin: 0 auto;
+  text-align: center;
   white-space: pre-wrap;
 }
 
@@ -67,9 +67,9 @@
 .filtered-product__name {
   font-size: 14px;
   font-weight: bold;
-  width: 50%;
-  white-space: pre-wrap;
   padding: 0 8px;
+  white-space: pre-wrap;
+  width: 50%;
 }
 
 .filtered-product__price {

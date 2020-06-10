@@ -3,20 +3,20 @@
 }
 
 .image img {
-  width: 100%;
   height: 100%;
+  width: 100%;
 }
 
 .image--not-found {
-  display: flex;
   align-items: center;
-  text-align: center;
-  justify-content: center;
-  height: 100%;
-  font-size: 16px;
   background-color: #eee;
   color: var(--font-color-light);
+  display: flex;
+  font-size: 16px;
   font-weight: bold;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
   white-space: pre-wrap;
 }
 
