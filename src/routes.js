@@ -5,10 +5,10 @@ import { Products, Product } from './pages';
 
 export default function Routes() {
   return (
-      <>
-        <Redirect from="/" to="/products" />
-        <Route path="/products" exact component={Products} />
-        <Route path={`/product/:name`} component={Product} />
-      </>
+    <>
+      <Redirect from="/" to="/products" />
+      <Route path="/products" exact component={Products} />
+      <Route path={`/product/:id`} component={Product} />
+    </>
   );
-};
+}
