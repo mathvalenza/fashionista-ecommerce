@@ -5,7 +5,7 @@ Deployed with Netlify [here](https://mathvalenza-fashionista.netlify.app/).
 
 This project was mainly made with React, Redux, React Router Dom and Cypress.
 
-![image](https://user-images.githubusercontent.com/34667046/84611775-2b6ac880-ae95-11ea-8225-4bece8bd5439.png)
+![fashionista](https://user-images.githubusercontent.com/34667046/85089479-22416a80-b1b9-11ea-820c-f673fca2547a.gif)
 
 ## Scripts
 
