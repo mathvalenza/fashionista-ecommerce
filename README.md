@@ -9,7 +9,7 @@ This project was mainly made with React, Redux, React Router Dom and Cypress.
 
 ## Scripts
 
-### Instal dependencies
+### Install dependencies
 `yarn`
 
 ### Run
