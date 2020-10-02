@@ -1,5 +1,5 @@
 # Fashionista
-### Final project of AceleraDev React by Codenation, 2020
+### Final project of AceleraDev React by Codenation, 2020. A mobile first ecommerce.
 
 Deployed with Netlify [here](https://mathvalenza-fashionista.netlify.app).
 
